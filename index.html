@@ -7,6 +7,8 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaquaries.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   </head>
   <body>
     <!--This is the navigation bar on the top of the website for easy navigation-->
@@ -19,12 +21,15 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="dark-mode-toggle">
-          <label class="switch">
-            <input type="checkbox" id="modeToggle">
-            <span class="slider round"></span>
-          </label>
-        </div>
+        <!-- Replace the old toggle with this -->
+<div class="dark-mode-toggle">
+  <input type="checkbox" id="modeToggle" hidden>
+  <label for="modeToggle" class="toggle-label">
+    <span class="toggle-ball"></span>
+    <span class="toggle-icon sun"></span>
+    <span class="toggle-icon moon"></span>
+  </label>
+</div>
       </div>
     </nav>
     <!--This is the hamburger menu for easy navigation on small screen devices-->
@@ -45,319 +50,241 @@
       </div>
     </nav>
     <!--This is the main content of the website-->
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profile.jpg" alt="Yagna Patel profile picture" />
+    <section id="profile" data-aos="fade-up">
+  <div class="section-inner">
+    <div class="section__pic-container">
+      <img src="./assets/profile.jpg" alt="Yagna Patel profile picture" />
+    </div>
+    <div class="section__text">
+      <p class="section__text__p1">Hello, I'm</p>
+      <h1 class="title">Yagna Patel</h1>
+      <p class="section__text__p2">
+        Computer Systems Technology Student at Sheridan College
+      </p>
+      <div class="btn-container">
+        <button
+          class="btn btn-color-2"
+          onclick="window.open('./assets/Yagna_Patel_Resume.pdf')"
+        >
+          Download Resume
+        </button>
+        <button class="btn btn-color-1" onclick="location.href='./#contact'">
+          Contact info
+        </button>
       </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Yagna Patel</h1>
-        <p class="section__text__p2">
-          Computer Systems Technology Student at Sheridan College
-        </p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/Yagna_Patel_Resume.pdf')"
-          >
-            Download Resume
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My linkedin profile"
-            class="icon"
-            onclick="location.href='https://linkedin.com/in/yagna--patel'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My GitHub profile"
-            class="icon"
-            onclick="location.href='https://github.com/Yagna3903'"
-          />
-        </div>
+      <div id="socials-container">
+        <img
+          src="./assets/linkedin.png"
+          alt="My linkedin profile"
+          class="icon"
+          onclick="location.href='https://linkedin.com/in/yagna--patel'"
+        />
+        <img
+          src="./assets/github.png"
+          alt="My GitHub profile"
+          class="icon"
+          onclick="location.href='https://github.com/Yagna3903'"
+        />
       </div>
-    </section>
+    </div>
+  </div>
+</section>
     <!--This is the about me section of the website-->
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.jpg"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>2+ years <br/>Full-Stack Development</p>
+    <section id="about" data-aos="fade-up">
+  <div class="section-inner">
+    <p class="section__text__p1">Get To Know More</p>
+    <h1 class="title">About Me</h1>
+    <div class="about-main">
+      <div class="about-content">
+        <div class="about-highlights">
+          <div class="highlight">
+            <img src="./assets/experience.png" alt="Experience icon" class="icon" />
+            <div>
+              <h3>Professional Experience</h3>
+              <p>
+                Sheridan College IT (Co-op)<br>
+                MindQuad Solutions (Intern)<br>
+                <span style="font-size: 0.95em;">Full-Stack & DevOps</span>
+              </p>
             </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>Computer Systems Technology | <b>Sheridan College</b></p>
           </div>
+          <div class="highlight">
+            <img src="./assets/education.png" alt="Education icon" class="icon" />
+            <div>
+              <h3>Education</h3>
+              <p>
+                Computer Systems Technology<br>
+                Sheridan College
+              </p>
+            </div>
           </div>
         </div>
-        <div class="text-container">
+        <div class="about-description">
           <p>
-            I’m a driven Computer Systems Technology student at Sheridan College specializing in full-stack and DevOps. 
-            I’ve co-oped with institutions like <strong>Sheridan College IT</strong> and <strong>MindQuad Solutions</strong>, 
-            optimized internal systems using NixOS, automated deployments with Ansible/Terraform, 
-            and developed scalable full-stack apps. I enjoy building efficient tech with clean code and real-world impact.
+            Hi, I'm <b>Yagna Patel</b>.<br>
+            <span>
+              I am a Computer Systems Technology student at Sheridan College, passionate about <b>full-stack development</b> and <b>DevOps</b>.<br>
+              My experience includes system automation (NixOS, Ansible, Terraform), cloud infrastructure, and building scalable web applications.<br>
+              During my co-op and internship, I delivered real-world solutions, optimized deployments, and collaborated in diverse teams.<br>
+              I thrive on learning new technologies and solving challenging problems with clean, efficient code.
+            </span>
           </p>
         </div>
-       </div>
-     </div>
-    <img
-      src="./assets/arrow.png"
-      alt="Arrow icon"
-      class="icon arrow"
-      onclick="location.href='./#experience'"/>
-    </section>
-    <!--This is the experience section of the website which includes skills-->
-    <section id="experience">
-      <p class="section__text__p1">My Journey So Far</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-            <div class="details-container">
-                <h2 class="experience-sub-title">Frontend Development</h2>
-                <div class="article-container">
-                    <article>
-                        <img 
-                        src="./assets/checkmark.png" 
-                        alt="Experience icon" 
-                        class="icon"
-                        />
-                        <div>
-                            <h3>HTML</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img 
-                        src="./assets/checkmark.png" 
-                        alt="Experience icon" 
-                        class="icon"
-                        />
-                        <div>
-                            <h3>CSS</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img 
-                        src="./assets/checkmark.png" 
-                        alt="Experience icon" 
-                        class="icon"
-                        />
-                        <div>
-                            <h3>SASS</h3>
-                            <p>Intermediate</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img 
-                        src="./assets/checkmark.png" 
-                        alt="Experience icon" 
-                        class="icon"
-                        />
-                        <div>
-                            <h3>JavaScript</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img 
-                        src="./assets/checkmark.png" 
-                        alt="Experience icon" 
-                        class="icon"
-                        />
-                        <div>
-                            <h3>TypeScript</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img 
-                        src="./assets/checkmark.png" 
-                        alt="Experience icon" 
-                        class="icon"
-                        />
-                        <div>
-                            <h3>Material UI</h3>
-                            <p>Basic</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-            <div class="details-container">
-                <h2 class="experience-sub-title">Backend Development</h2>
-                <div class="article-container">
-                    <article>
-                        <img 
-                        src="./assets/checkmark.png" 
-                        alt="Experience icon" 
-                        class="icon"
-                        />
-                        <div>
-                            <h3>PostgresSQL</h3>
-                            <p>Intermediate</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img 
-                        src="./assets/checkmark.png" 
-                        alt="Experience icon" 
-                        class="icon"
-                        />
-                        <div>
-                            <h3>NodeJS</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img 
-                        src="./assets/checkmark.png" 
-                        alt="Experience icon" 
-                        class="icon"
-                        />
-                        <div>
-                            <h3>ExpressJS</h3>
-                            <p>Intermediate</p>
-                        </div>
-                    </article>
-                    <article>
-                        <img 
-                        src="./assets/checkmark.png" 
-                        alt="Experience icon" 
-                        class="icon"
-                        />
-                        <div>
-                            <h3>Git</h3>
-                            <p>Experienced</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-        </div>
-        <img
-      src="./assets/arrow.png"
-      alt="Arrow icon"
-      class="icon arrow"
-      onclick="location.href='./#projects'"/>
-        </section>
-    <!--This is the projects section of the website which includes my recent projects-->    
-    <section id="projects">
-        <p class="section__text__p1">Browse My Recent</p>
-        <h1 class="title">Projects</h1>
-        <div class="experience-details-container">
-            <div class="about-containers">
-            <div class="details-container color-container">
-                <div class="article-container">
-                    <img 
-                    src="./assets/project1.webp"
-                    alt="project 1"
-                    class="project-img"
-                    />
-                </div>
-                <h2 class="experience-sub-title project-title">CareerCraft AI</h2>
-                <div class="btn-container">
-                    <!-- CareerCraft AI -->
-                    <button 
-                    class="btn btn-color-2 project-btn" 
-                    onclick="location.href='https://github.com/Yagna3903/Hackathon-Bearhacks'"
-                    >
-                    GitHub
-                    </button>
-    <!-- This below link to be replaced with the link on which this project gets hosted on -->
-                    <button 
-                    class="btn btn-color-2 project-btn" 
-                    onclick="location.href='https://career-craft-ai.vercel.app/'"
-                  >
-                    Live Demo
-                  </button>
-                </div>
-            </div>
-            <div class="details-container color-container">
-                <div class="article-container">
-                    <img 
-                    src="./assets/project 2.png"
-                    alt="project 2"
-                    class="project-img"
-                    />
-                </div>
-                <h2 class="experience-sub-title project-title">Highlander Simulator</h2>
-                <div class="btn-container">
-                  <button 
-                  class="btn btn-color-2 project-btn" 
-                  onclick="location.href='https://github.com/Yagna3903/Highlander-Simulator'"
-                  >
-                  GitHub
-                  </button>
-    <!-- This below link to be replaced with the link on which this project gets hosted on -->
-                    <button 
-                    class="btn btn-color-2 project-btn" 
-                    onclick="location.href='https://github.com/Yagna3903/Hackathon-Bearhacks'"
-                    >
-                        Live Demo
-                    </button>
-                </div>
-            </div>
-        </div>
-        </div>
-        <img
-      src="./assets/arrow.png"
-      alt="Arrow icon"
-      class="icon arrow"
-      onclick="location.href='./#about'"/>
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img src="./assets/email.png" alt="email icon" class="icon email-icon"/>
-          <p><a href="mailto:yagna.pattel@gmail.com">yagna.pattel@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img src="./assets/linkedin.png" alt="linkedIn icon" class="icon contact-icon"/>
-          <p><a href="https://www.linkedin.com/in/yagna--patel/">LinkedIn</a></p>
-        </div>
       </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+    </div>
+  </div>
+</section>
+    <!--This is the experience section of the website which includes skills-->
+    <section id="experience" data-aos="fade-up">
+  <div class="section-inner">
+    <p class="section__text__p1">My Technical Toolkit</p>
+    <h1 class="title">Experience</h1>
+    <div class="skills-container">
+      <div class="skill-category">
+        <img src="./assets/frontend.png" alt="Frontend Icon" class="icon" />
+        <h2>Languages & Frameworks</h2>
+        <ul>
+          <li>Java, Python, C, C#, Kotlin, PHP</li>
+          <li>JavaScript, Angular, Spring Boot, .NET, Ionic, Nix, Laravel</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <img src="./assets/devops.png" alt="DevOps Icon" class="icon" />
+        <h2>DevOps & Automation</h2>
+        <ul>
+          <li>Ansible, Terraform, Packer, Docker, Jenkins</li>
+          <li>REST APIs</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <img src="./assets/cloud.png" alt="Cloud Icon" class="icon" />
+        <h2>Cloud & Tools</h2>
+        <ul>
+          <li>AWS, Azure, GCP, Microsoft 365</li>
+          <li>Cisco Packet Tracer, Wireshark, VirtualBox, Git, Snipe-IT</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <img src="./assets/database.png" alt="Database Icon" class="icon" />
+        <h2>Databases</h2>
+        <ul>
+          <li>MySQL, PostgreSQL, Oracle, MongoDB, Supabase, SQL</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <img src="./assets/os.png" alt="Operating Systems Icon" class="icon" />
+        <h2>Operating Systems</h2>
+        <ul>
+          <li>Windows, macOS, Linux (Ubuntu, NixOS), Android</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <img src="./assets/tools.png" alt="Project Management Icon" class="icon" />
+        <h2>Project Management & Collaboration</h2>
+        <ul>
+          <li>Agile, Scrum, Jira, Trello, Figma, Power BI</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+    <!--This is the projects section of the website which includes my recent projects-->    
+    <section id="projects" data-aos="fade-up">
+  <div class="section-inner">
+    <p class="section__text__p1">Browse My Recent</p>
+    <h1 class="title">Projects</h1>
+    <div class="experience-details-container">
+        <div class="about-containers">
+        <div class="details-container color-container">
+            <div class="article-container">
+                <img 
+                src="./assets/project1.webp"
+                alt="project 1"
+                class="project-img"
+                />
+            </div>
+            <h2 class="experience-sub-title project-title">CareerCraft AI</h2>
+            <div class="btn-container">
+                <!-- CareerCraft AI -->
+                <button 
+                class="btn btn-color-2 project-btn" 
+                onclick="location.href='https://github.com/Yagna3903/Hackathon-Bearhacks'"
+                >
+                GitHub
+                </button>
+    <!-- This below link to be replaced with the link on which this project gets hosted on -->
+                <button 
+                class="btn btn-color-2 project-btn" 
+                onclick="location.href='https://career-craft-ai.vercel.app/'"
+              >
+                Live Demo
+              </button>
+            </div>
         </div>
-      </nav>
-      <p>Copyright &#169; 2025 Yagna Patel. All Rights Reserved</p>
+        <div class="details-container color-container">
+            <div class="article-container">
+                <img 
+                src="./assets/project 2.png"
+                alt="project 2"
+                class="project-img"
+                />
+            </div>
+            <h2 class="experience-sub-title project-title">Highlander Simulator</h2>
+            <div class="btn-container">
+              <button 
+              class="btn btn-color-2 project-btn" 
+              onclick="location.href='https://github.com/Yagna3903/Highlander-Simulator'"
+              >
+              GitHub
+              </button>
+    <!-- This below link to be replaced with the link on which this project gets hosted on -->
+                <button 
+                class="btn btn-color-2 project-btn" 
+                onclick="location.href='https://github.com/Yagna3903/Hackathon-Bearhacks'"
+                >
+                    Live Demo
+                </button>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</section>
+    <section id="contact" data-aos="fade-up">
+  <div class="section-inner">
+    <p class="section__text__p1">Get in Touch</p>
+    <h1 class="title">Contact Me</h1>
+    <div class="contact-info-upper-container">
+      <div class="contact-info-container">
+        <img src="./assets/email.png" alt="email icon" class="icon email-icon"/>
+        <p><a href="mailto:yagna.pattel@gmail.com">yagna.pattel@gmail.com</a></p>
+      </div>
+      <div class="contact-info-container">
+        <img src="./assets/linkedin.png" alt="linkedIn icon" class="icon contact-icon"/>
+        <p><a href="https://www.linkedin.com/in/yagna--patel/">LinkedIn</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+    <footer>
+      <div class="section-inner">
+        <nav>
+          <div class="nav-links-container">
+            <ul class="nav-links">
+              <li><a href="#about">About</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+        <p>Copyright &#169; 2025 Yagna Patel. All Rights Reserved</p>
+      </div>
     </footer>    
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 900, once: true });
+</script>
   </body>
 </html>
