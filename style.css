@@ -1,3 +1,23 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #353535;
+  --secondary-color: #f9f9f9;
+  --border-color: #a3a3a3;
+  --btn-hover: #000000;
+  --link-hover: #b5b5b5;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --accent-color: #ffffff;
+  --secondary-color: #1f1f1f;
+  --border-color: #444444;
+  --btn-hover: #ffffff;
+  --link-hover: #999999;
+}
+
 /* GENERAL */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
@@ -9,6 +29,9 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html {
@@ -16,7 +39,7 @@ html {
 }
 
 p {
-  color: rgb(85, 85, 85);
+  color: var(--text-color);
 }
 
 /* Transition */
@@ -37,6 +60,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   height: 17vh;
+  background-color: var(--bg-color);
 }
 
 .nav-links {
@@ -46,20 +70,20 @@ nav {
 }
 
 a {
-  color: black;
+  color: var(--text-color);
   text-decoration: none;
-  text-decoration-color: white;
 }
 
 a:hover {
-  color: grey;
+  color: var(--link-hover);
   text-decoration: underline;
   text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
+  text-decoration-color: var(--link-hover);
 }
 
 .logo {
   font-size: 2rem;
+  color: var(--text-color);
 }
 
 .logo:hover {
@@ -89,7 +113,7 @@ a:hover {
 .hamburger-icon span {
   width: 100%;
   height: 2px;
-  background-color: black;
+  background-color: var(--text-color);
   transition: all 0.3s ease-in-out;
 }
 
@@ -230,7 +254,8 @@ section {
 
 .btn-color-1,
 .btn-color-2 {
-  border: rgb(53, 53, 53) 0.1rem solid;
+  border: var(--accent-color) 0.1rem solid;
+  color: var(--text-color);
 }
 
 .btn-color-1:hover,
@@ -245,7 +270,8 @@ section {
 }
 
 .btn-color-1:hover {
-  background: rgb(0, 0, 0);
+  background: var(--btn-hover);
+  color: var(--bg-color);
 }
 
 .btn-color-2 {
@@ -253,7 +279,7 @@ section {
 }
 
 .btn-color-2:hover {
-  background: rgb(255, 255, 255) 0.1rem solid;
+  background: var(--secondary-color);
 }
 
 .btn-container {
@@ -431,4 +457,50 @@ footer {
 
 footer p {
   text-align: center;;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 24px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
 }
