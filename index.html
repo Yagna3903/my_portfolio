@@ -30,27 +30,33 @@
     <!--This is the hamburger menu for easy navigation on small screen devices-->
     <nav id="hamburger-nav">
       <div class="logo">Yagna Patel</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <ul class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="theme-toggle-mobile">
+          <input type="checkbox" id="toggle-dark-mobile" />
+          <label for="toggle-dark-mobile" class="toggle-label">
+            <span class="toggle-dot"></span>
+          </label>
+        </div>
       </div>
     </nav>
     <!--This is the main content of the website-->
     <section id="profile" data-aos="fade-up">
-  <div class="section-inner">
-    <div class="section__pic-container">
-      <img src="./assets/profile.jpg" alt="Yagna Patel profile picture" />
+  <div class="profile-section-inner">
+    <div class="profile-pic-clean">
+      <img src="./assets/profile.jpg" alt="Yagna Patel" class="profile-pic" />
     </div>
-    <div class="section__text">
+    <div class="profile-text">
       <p class="section__text__p1">Hello, I'm</p>
       <h1 class="title">Yagna Patel</h1>
       <p class="section__text__p2">
@@ -199,10 +205,10 @@
             Developed a full-stack AI MVP in 36 hours for BearHacks. Focused on innovative solutions and rapid prototyping in a collaborative team environment.
           </p>
           <div class="project-tech">
-            <span>Python</span>
-            <span>API Keys</span>
-            <span>Supabase</span>
-            <span>ReactJS</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">API Keys</span>
+            <span class="project-tag">Supabase</span>
+            <span class="project-tag">ReactJS</span>
           </div>
           <div class="project-links">
             <a href="https://github.com/Yagna3903/Hackathon-Bearhacks.git" target="_blank" class="btn">GitHub</a>
@@ -220,10 +226,10 @@
             Created a simulation tool to model and analyze scenarios for process optimization. Emphasized clean code, user-friendly design, and actionable insights.
           </p>
           <div class="project-tech">
-            <span>C#</span>
-            <span>.Net Frameworks</span>
-            <span>Figma</span>
-            <span>MySQL</span>
+            <span class="project-tag">C#</span>
+            <span class="project-tag">.Net Frameworks</span>
+            <span class="project-tag">Figma</span>
+            <span class="project-tag">MySQL</span>
           </div>
           <div class="project-links">
             <a href="https://github.com/Yagna3903/Highlander-Simulator" target="_blank" class="btn">GitHub</a>
