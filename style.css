@@ -46,32 +46,50 @@ a,
   transition: all 300ms ease;
 }
 
-/* --- Navigation Bar Minimalist Redesign --- */
+/* --- Minimal Card Navbar --- */
 #desktop-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 3vw;
   height: 84px;
-  background: var(--bg-color, #fff);
-  box-shadow: 0 4px 18px -10px rgba(60, 60, 60, 0.09); /* Soft shadow instead of border */
+  background: #fff;
+  box-shadow: 0 6px 32px -12px rgba(60, 60, 60, 0.10);
   font-family: 'Poppins', sans-serif;
   position: relative;
   z-index: 10;
+  border-radius: 1.2rem;
+  margin: 18px auto 0 auto;
+  max-width: 1200px;
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
+/* Dark mode card */
+body.dark-mode #desktop-nav {
+  background: #181c20;
+  box-shadow: 0 6px 32px -12px rgba(0,0,0,0.22);
+}
+
+/* Logo: neutral, bold, with padding for card feel */
 .logo {
-  font-family: 'sans-serif', Poppins;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--accent-color, #1a1a1a);
-  letter-spacing: 0.05em;
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #222;
+  letter-spacing: 0.06em;
   user-select: none;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  transition: color 0.2s, text-shadow 0.2s;
+  padding: 0.35em 1.1em 0.35em 0.2em;
+  border-radius: 0.7em;
+  background: transparent;
   margin-right: 2vw;
+  transition: color 0.2s, text-shadow 0.2s, background 0.2s;
+  line-height: 1.1;
 }
 
+body.dark-mode .logo {
+  color: #f3f3f3;
+}
+
+/* Links: neutral underline, no blue */
 .nav-links {
   display: flex;
   gap: 2.3rem;
@@ -81,7 +99,7 @@ a,
 }
 
 .nav-links li a {
-  color: var(--text-color, #444);
+  color: #444;
   text-decoration: none;
   font-size: 1.13rem;
   font-weight: 500;
@@ -90,17 +108,25 @@ a,
   transition: color 0.18s;
 }
 
-/* Minimal underline animation on hover */
+body.dark-mode .nav-links li a {
+  color: #e0e0e0;
+}
+
+/* Minimal underline animation in neutral color */
 .nav-links li a::after {
   content: '';
   display: block;
   position: absolute;
   left: 0; right: 0; bottom: -3px;
   height: 2px;
-  background: var(--accent-color, #1a1a1a);
+  background: #bbb;
   border-radius: 1px;
   transform: scaleX(0);
   transition: transform 0.22s cubic-bezier(.4,0,.2,1);
+}
+
+body.dark-mode .nav-links li a::after {
+  background: #444;
 }
 
 .nav-links li a:hover::after,
@@ -110,8 +136,13 @@ a,
 
 .nav-links li a:hover,
 .nav-links li a:focus {
-  color: var(--accent-color, #1a1a1a);
+  color: #222;
   outline: none;
+}
+
+body.dark-mode .nav-links li a:hover,
+body.dark-mode .nav-links li a:focus {
+  color: #fff;
 }
 
 /* Theme Toggle Switch */
@@ -159,17 +190,16 @@ a,
   position: absolute;
   left: 4px;
   top: 4px;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   background: #ffe066;
   border-radius: 50%;
-  box-shadow:
-    0 0 0 4px #ffe06644,
-    0 0 8px 2px #ffe06688;
+  box-shadow: 0 0 10px 2px #ffe06699;
   transition: left 0.3s, background 0.3s, box-shadow 0.3s;
   z-index: 2;
 }
 
+/* Sun rays: thin, short, and evenly spaced */
 .toggle-dot::after {
   content: '';
   position: absolute;
@@ -178,36 +208,43 @@ a,
   width: 28px;
   height: 28px;
   transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: repeating-conic-gradient(
-    #ffe066 0deg 10deg,
-    transparent 10deg 45deg
-  );
-  opacity: 0.45;
-  z-index: 1;
   pointer-events: none;
+  background:
+    repeating-conic-gradient(
+      #ffe066 0deg 5deg,
+      transparent 5deg 45deg
+    );
+  border-radius: 50%;
+  opacity: 0.55;
+  z-index: 1;
 }
 
 /* Toggle Dot as Moon (dark mode) */
+#toggle-dark-mobile:checked + .toggle-label .toggle-dot,
 #toggle-dark:checked + .toggle-label .toggle-dot {
   left: 28px;
   background: #e0e0e0;
   box-shadow: 0 0 8px 2px #b0b0b0;
   overflow: hidden;
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 }
 
-/* Use a slightly darker overlay for the crescent cutout */
+#toggle-dark-mobile:checked + .toggle-label .toggle-dot::after,
+#toggle-dark:checked + .toggle-label .toggle-dot::after {
+  opacity: 0;
+}
+
+#toggle-dark-mobile:checked + .toggle-label .toggle-dot::before,
 #toggle-dark:checked + .toggle-label .toggle-dot::before {
   content: '';
   position: absolute;
-  left: 10px;
+  left: 8px;
   top: 2px;
-  width: 14px;
-  height: 16px;
-  background: #c0c0c0; /* Slightly darker than the moon */
+  width: 10px;
+  height: 12px;
+  background: #c0c0c0;
   border-radius: 50%;
   z-index: 3;
 }
@@ -219,18 +256,23 @@ a,
     height: auto;
     padding: 1.2rem 1vw;
     box-shadow: 0 2px 10px -6px rgba(60, 60, 60, 0.09);
+    border-radius: 0.7rem;
+    margin-top: 10px;
   }
   .logo {
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin-bottom: 0.7rem;
+    padding: 0.15em 0.5em 0.15em 0.1em;
   }
   .nav-links {
     gap: 1.1rem;
     font-size: 1rem;
   }
-  .theme-toggle {
-    margin-left: 0;
-    margin-top: 1rem;
+  .theme-toggle-mobile {
+    margin-top: 2rem;
+    margin-bottom: 2.5rem; /* Add extra space at the bottom */
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -262,13 +304,17 @@ a,
 
 .menu-links {
   position: absolute;
-  top: 100%;
-  right: 0;
-  background-color: white;
-  width: fit-content;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 101;
+  overflow-y: auto;
 }
 
 .menu-links a {
@@ -279,6 +325,11 @@ a,
   color: black;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
+}
+
+.menu-links ul {
+  margin: 0;
+  padding: 0;
 }
 
 .menu-links li {
@@ -303,15 +354,44 @@ section {
 #profile {
   display: flex;
   justify-content: center;
-  gap: 5rem;
-  height: 80vh;
+  align-items: center;
+  min-height: 70vh;
+  background: none;
+  padding: 0;
 }
 
-.section__pic-container {
+.profile-section-inner {
   display: flex;
-  width: 400px;
-  height: 400px;
-  margin: auto 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+/* Attractive, large, centered profile picture with gradient ring */
+.profile-pic-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: conic-gradient(from 180deg at 50% 50%, #a5b4fc 0%, #f0fdfa 100%);
+  box-shadow: 0 8px 36px -10px rgba(60,60,60,0.18);
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.profile-pic {
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  box-shadow: 0 4px 24px 0 rgba(60,60,60,0.10);
+  background: #fff;
+  display: block;
+  transition: box-shadow 0.2s;
 }
 
 .section__text {
@@ -852,4 +932,137 @@ input:checked + .slider:before {
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px);}
   to { opacity: 1; transform: translateY(0);}
+}
+
+/* Hamburger nav only visible on small screens */
+#hamburger-nav {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  #desktop-nav {
+    display: none;
+  }
+  #hamburger-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.2rem;
+    height: 70px;
+    background: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 0 6px 32px -12px rgba(60, 60, 60, 0.10);
+    position: relative;
+    z-index: 100;
+  }
+  #hamburger-nav .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
+    margin-right: auto;
+  }
+  .hamburger-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    margin-left: auto;
+    z-index: 102;
+  }
+  .hamburger-icon span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: #444;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+  .menu-links {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255,255,255,0.98);
+    box-shadow: 0 8px 32px -8px rgba(60,60,60,0.13);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Start at the top */
+    z-index: 101;
+    overflow-y: auto; /* Allow scrolling if needed */
+    padding-top: 80px; /* Space for logo/hamburger if needed */
+  }
+  .menu-links.open {
+    display: flex;
+  }
+  .menu-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+  }
+  .menu-links li a {
+    color: #222;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .theme-toggle-mobile {
+    margin-top: 2rem;
+    margin-bottom: 2.5rem; /* Add extra space at the bottom */
+    display: flex;
+    justify-content: center;
+  }
+  body.dark-mode #hamburger-nav {
+    background: #181c20;
+  }
+  body.dark-mode .menu-links {
+    background: #181c20;
+  }
+  body.dark-mode .menu-links li a {
+    color: #fff;
+  }
+}
+
+/* Hide the native checkbox for all theme toggles */
+#toggle-dark,
+#toggle-dark-mobile {
+  display: none;
+}
+
+/* Make icons visible in dark mode */
+body.dark-mode img.icon,
+body.dark-mode .footer-icon,
+body.dark-mode .contact-icon {
+  filter: invert(1) brightness(1.6) grayscale(0.1) !important;
+  /* You can tweak brightness and grayscale for best results */
+}
+
+/* Example: for spans with a white background in dark mode */
+body.dark-mode span.project-tag,
+body.dark-mode .project-span {
+  color: #222 !important;      /* or any dark color */
+  background: #fff !important; /* if you want the background to stay white */
+}
+
+/* Make project buttons readable in dark mode */
+body.dark-mode .btn,
+body.dark-mode .project-links .btn {
+  background: #fff !important;
+  color: #222 !important;
+  border: 1px solid #444 !important;
+}
+
+body.dark-mode .btn:hover,
+body.dark-mode .project-links .btn:hover {
+  background: #e5e7eb !important;
+  color: #111 !important;
 }
