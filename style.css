@@ -46,44 +46,174 @@ a,
   transition: all 300ms ease;
 }
 
-/* Desktop Navigation */
-nav,
-.nav-links {
+/* --- Navigation Bar Minimalist Redesign --- */
+#desktop-nav {
   display: flex;
-}
-
-nav {
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  height: 17vh;
-  background-color: var(--bg-color);
+  height: 90px;
+  background: var(--bg-color);
+  padding: 0 3vw;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.nav-links {
-  gap: 2rem;
-  list-style: none;
-  font-size: 1.5rem;
-}
-
-a {
-  color: var(--text-color);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--link-hover);
-  text-decoration: underline;
-  text-underline-offset: 1rem;
-  text-decoration-color: var(--link-hover);
+.logo-container {
+  display: flex;
+  align-items: center;
 }
 
 .logo {
-  font-size: 2rem;
-  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.7rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  letter-spacing: 0.04em;
+  user-select: none;
 }
 
-.logo:hover {
-  cursor: default;
+.nav-links {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.15rem;
+  align-items: center;
+}
+
+.nav-links li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  transition: none;
+}
+
+/* Theme Toggle Switch */
+.theme-toggle {
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  width: 48px;
+  height: 24px;
+}
+
+.toggle-icon {
+  font-size: 1.1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.2s;
+}
+
+.toggle-icon.sun {
+  left: 6px;
+  color: #f5c518;
+  opacity: 1;
+}
+
+.toggle-icon.moon {
+  right: 6px;
+  color: #555;
+  opacity: 0;
+}
+
+/* Toggle Dot as Sun (light mode) */
+.toggle-dot {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  background: #ffe066;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 4px #ffe06644,
+    0 0 8px 2px #ffe06688;
+  transition: left 0.3s, background 0.3s, box-shadow 0.3s;
+  z-index: 2;
+}
+
+.toggle-dot::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    #ffe066 0deg 10deg,
+    transparent 10deg 45deg
+  );
+  opacity: 0.45;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Toggle Dot as Moon (dark mode) */
+#toggle-dark:checked + .toggle-label .toggle-dot {
+  left: 28px;
+  background: #e0e0e0;
+  box-shadow: 0 0 8px 2px #b0b0b0;
+}
+
+#toggle-dark:checked + .toggle-label .toggle-dot::after {
+  opacity: 0;
+}
+
+/* Crescent moon using a white overlay to "cut out" the crescent */
+#toggle-dark:checked + .toggle-label .toggle-dot::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 2px;
+  width: 14px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: none;
+}
+
+/* Optional: subtle border for clarity */
+.toggle-dot,
+#toggle-dark:checked + .toggle-label .toggle-dot {
+  border: 2px solid #ccc;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  #desktop-nav {
+    flex-direction: column;
+    height: auto;
+    padding: 1.2rem 1vw;
+  }
+  .logo {
+    font-size: 2rem;
+    margin-bottom: 0.7rem;
+  }
+  .nav-links {
+    gap: 1.1rem;
+    font-size: 1rem;
+  }
+  .theme-toggle {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
 }
 
 /* Hamburger Menu */
