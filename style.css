@@ -169,30 +169,23 @@ a,
   left: 28px;
   background: #e0e0e0;
   box-shadow: 0 0 8px 2px #b0b0b0;
+  overflow: hidden;
+  position: absolute;
+  width: 20px;
+  height: 20px;
 }
 
-#toggle-dark:checked + .toggle-label .toggle-dot::after {
-  opacity: 0;
-}
-
-/* Crescent moon using a white overlay to "cut out" the crescent */
+/* Use a slightly darker overlay for the crescent cutout */
 #toggle-dark:checked + .toggle-label .toggle-dot::before {
   content: '';
   position: absolute;
-  left: 12px;
+  left: 10px;
   top: 2px;
   width: 14px;
   height: 16px;
-  background: #fff;
+  background: #c0c0c0; /* Slightly darker than the moon */
   border-radius: 50%;
   z-index: 3;
-  box-shadow: none;
-}
-
-/* Optional: subtle border for clarity */
-.toggle-dot,
-#toggle-dark:checked + .toggle-label .toggle-dot {
-  border: 2px solid #ccc;
 }
 
 /* Responsive */
