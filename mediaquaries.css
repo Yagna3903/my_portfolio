@@ -3,11 +3,7 @@
         height: 83vh;
         margin-bottom: 6rem;
     }
-    .about-container {
-        flex-wrap: wrap;
-    }
 }
-
 
 @media screen and (max-width: 1200px) {
     #desktop-nav {
@@ -16,86 +12,89 @@
     #hamburger-nav {
         display: flex;
     }
-    #experience,
-    .experience-details-container {
-        margin-top: 2rem;
-    }
-    #profile,
-    .section-container {
+    #profile {
         display: block;
     }
-    .arrow {
-        display: none;
+    /* Remove section margin to prevent overflow */
+    section {
+        margin: 0;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        box-sizing: border-box;
     }
-    section,
-    .section-container {
-        height: fit-content;
+}
+
+@media screen and (max-width: 900px) {
+    .skills-container,
+    .projects-gallery,
+    .about-highlights {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+    }
+    .skill-category,
+    .project-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
     }
     section {
-        margin: 0 5%;
-    }
-    .section__pic-container {
-        height: 275px;
-        width: 275px;
-        margin: 0 auto 2rem;
-    }
-
-    .about-container {
-        margin-top: 0;
+        margin: 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
     }
 }
 
 @media screen and (max-width: 600px) {
-    #contact, 
-    footer {
-        height: 40vh;
-    }
     #profile {
-        height: 83vh;
+        height: auto;
         margin-bottom: 0;
+        flex-direction: column;
+        gap: 2rem;
     }
-    article {
-        font-size: 1rem;
+    .section__pic-container {
+        width: 90vw;
+        height: 46vw;
+        max-width: 220px;
+        max-height: 220px;
+        justify-content: center;
     }
-    footer nav {
-        height: fit-content;
-        margin-bottom: 2rem;
+    .section__text__p2 {
+        font-size: 1.1rem;
     }
-    .about-container, 
-    .contact-info-upper-container,
-    .btn-container {
-        flex-wrap: wrap;
-    }
-    .contact-info-container {
-        margin: 0;
-    }
-    .contact-info-container p, 
-    .nav-links li a {
-        font-size: 1rem;
-    }
-    .experience-sub-title {
-        font-size: 1.25rem;
+    .title {
+        font-size: 1.5rem;
     }
     .logo {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     .nav-links {
         flex-direction: column;
         gap: 0.5rem;
         text-align: center;
     }
-    .section__pic-container {
-        width: auto;
-        height: 46vw;
-        justify-content: center;
+    .skills-container,
+    .projects-gallery {
+        gap: 1rem;
     }
-    .section__text__p2 {
-        font-size: 1.25rem;
+    .footer-inner {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
     }
-    .title {
-        font-size: 2rem;
+    .footer-links {
+        gap: 0.7rem;
     }
-    .text-container {
-        text-align: justify;
+    .footer-socials {
+        gap: 0.5rem;
+    }
+    /* Remove fixed heights for #contact and footer */
+    #contact, 
+    footer {
+        height: auto;
+        padding-bottom: 2rem;
     }
 }
