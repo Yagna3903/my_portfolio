@@ -457,6 +457,114 @@ article .icon {
   border-color: rgb(163, 163, 163);
 }
 
+.projects-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+.projects-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.project-card {
+  background: var(--secondary-color);
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 340px;
+  width: 100%;
+  padding: 1.5rem 1.2rem;
+  transition: transform 0.2s;
+}
+.project-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+}
+.project-img {
+  width: 100%;
+  max-width: 260px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  background: #f3f3f3;
+}
+.project-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+.project-info h3 {
+  margin: 0 0 0.2rem 0;
+  font-size: 1.15rem;
+  color: var(--accent-color);
+}
+.project-role, .project-duration {
+  display: block;
+  font-size: 1rem;
+  color: #888;
+}
+.project-info p {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin: 0.5rem 0;
+}
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+.project-tech span {
+  background: var(--accent-color);
+  color: #fff;
+  border-radius: 0.7rem;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.95rem;
+}
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+.project-links .btn {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 0.4rem 1.1rem;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+  cursor: pointer;
+  display: inline-block;
+}
+.project-links .btn:hover {
+  background: var(--accent-color-dark, #333);
+}
+/* Responsive */
+@media (max-width: 900px) {
+  .projects-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+  .project-card {
+    max-width: 95vw;
+  }
+}
+
 /* CONTACT SECTION */
 
 #contact {
