@@ -1125,3 +1125,15 @@ body.dark-mode .project-links .btn:hover {
   margin-left: auto;
   margin-right: auto;
 }
+
+.about-description.highlight-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  background: #f3f3f3;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+
+body.dark-mode .about-description.highlight-card:hover {
+  box-shadow: 0 6px 24px rgba(255,255,255,0.10);
+  background: #23272b;
+  transition: box-shadow 0.2s, background 0.2s;
+}
