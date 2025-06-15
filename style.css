@@ -1032,6 +1032,55 @@ input:checked + .slider:before {
   }
 }
 
+/* --- Certification Section --- */
+#certification {
+  padding-top: 4vh;
+  min-height: 40vh;
+  width: 100%;
+}
+
+.certification-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.certification-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.cert-card {
+  background: var(--secondary-color);
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 1.5rem 2rem;
+  min-width: 220px;
+  max-width: 340px;
+  text-align: center;
+  transition: box-shadow 0.2s, background 0.2s;
+}
+
+.cert-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  background: #f3f3f3;
+}
+
+body.dark-mode .cert-card {
+  background: #1f1f1f;
+}
+
+body.dark-mode .cert-card:hover {
+  box-shadow: 0 6px 24px rgba(255,255,255,0.10);
+  background: #23272b;
+}
+
 /* Hide the native checkbox for all theme toggles */
 #toggle-dark,
 #toggle-dark-mobile {
@@ -1065,4 +1114,14 @@ body.dark-mode .btn:hover,
 body.dark-mode .project-links .btn:hover {
   background: #e5e7eb !important;
   color: #111 !important;
+}
+
+.cert-img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
