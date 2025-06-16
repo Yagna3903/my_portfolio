@@ -1137,3 +1137,7 @@ body.dark-mode .about-description.highlight-card:hover {
   background: #23272b;
   transition: box-shadow 0.2s, background 0.2s;
 }
+
+body.dark-mode #hamburger-nav .logo {
+  color: #f3f3f3 !important;
+}
