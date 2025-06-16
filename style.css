@@ -383,8 +383,8 @@ section {
 }
 
 .profile-pic {
-  width: 230px;
-  height: 230px;
+  width: 270px;
+  height: 270px;
   object-fit: cover;
   border-radius: 50%;
   border: 6px solid #fff;
