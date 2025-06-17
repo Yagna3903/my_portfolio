@@ -315,6 +315,7 @@ body.dark-mode .nav-links li a:focus {
   position: fixed;
   z-index: 101;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .menu-links a {
@@ -338,6 +339,19 @@ body.dark-mode .nav-links li a:focus {
 
 .menu-links.open {
   max-height: 300px;
+}
+
+.menu-links::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 36px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.85));
+  z-index: 2;
+}
+body.dark-mode .menu-links::after {
+  background: linear-gradient(to bottom, rgba(24,28,32,0), #181c20 90%);
 }
 
 /* Sections */
