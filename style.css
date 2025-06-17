@@ -1141,3 +1141,14 @@ body.dark-mode .about-description.highlight-card:hover {
 body.dark-mode #hamburger-nav .logo {
   color: #f3f3f3 !important;
 }
+
+@media (max-width: 600px) {
+  .section__text__p2 {
+    text-align: center;
+    max-width: 95vw;
+    margin: 0 auto 1rem auto;
+    padding: 0 8px;
+    font-size: 1.1rem;
+    word-break: break-word;
+  }
+}
