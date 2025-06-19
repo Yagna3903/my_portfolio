@@ -1,313 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaquaries.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
-  </head>
-  <body>
-    <!--This is the navigation bar on the top of the website for easy navigation-->
-    <nav id="desktop-nav">
-  <div class="logo">Yagna Patel</div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#certification">Certification</a></li> <!-- Added -->
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div class="theme-toggle">
-    <input type="checkbox" id="toggle-dark" />
-    <label for="toggle-dark" class="toggle-label">
-      <span class="toggle-dot"></span>
-    </label>
-  </div>
-</nav>
-    <!--This is the hamburger menu for easy navigation on small screen devices-->
-    <nav id="hamburger-nav">
-      <div class="logo">Yagna Patel</div>
-      <div class="hamburger-icon" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaquaries.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+</head>
+
+<body>
+  <!--This is the navigation bar on the top of the website for easy navigation-->
+  <nav id="desktop-nav">
+    <div class="logo">Yagna Patel</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certification">Certification</a></li> <!-- Added -->
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="theme-toggle">
+      <input type="checkbox" id="toggle-dark" />
+      <label for="toggle-dark" class="toggle-label">
+        <span class="toggle-dot"></span>
+      </label>
+    </div>
+  </nav>
+  <!--This is the hamburger menu for easy navigation on small screen devices-->
+  <nav id="hamburger-nav">
+    <div class="logo">Yagna Patel</div>
+    <div class="hamburger-icon" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menu-links">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certification">Certification</a></li> <!-- Added -->
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="theme-toggle-mobile">
+        <input type="checkbox" id="toggle-dark-mobile" />
+        <label for="toggle-dark-mobile" class="toggle-label">
+          <span class="toggle-dot"></span>
+        </label>
       </div>
-      <div class="menu-links">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#certification">Certification</a></li> <!-- Added -->
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="theme-toggle-mobile">
-          <input type="checkbox" id="toggle-dark-mobile" />
-          <label for="toggle-dark-mobile" class="toggle-label">
-            <span class="toggle-dot"></span>
-          </label>
+    </div>
+  </nav>
+  <!--This is the main content of the website-->
+  <section id="profile" data-aos="fade-up">
+    <div class="profile-section-inner">
+      <div class="profile-pic-clean">
+        <img src="./assets/profile.jpg" alt="Yagna Patel" class="profile-pic" />
+      </div>
+      <div class="profile-text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Yagna Patel</h1>
+        <p class="section__text__p2">
+          Computer Systems Technology Student at Sheridan College
+        </p>
+        <div class="btn-container">
+          <button class="btn btn-color-2" onclick="window.open('./assets/Yagna_Patel_Resume.pdf')">
+            Download Resume
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact info
+          </button>
+        </div>
+        <div id="socials-container">
+          <img src="./assets/linkedin-brands.svg" alt="My linkedin profile" class="icon"
+            onclick="location.href='https://linkedin.com/in/yagna--patel'" />
+          <img src="./assets/github-brands.svg" alt="My GitHub profile" class="icon"
+            onclick="location.href='https://github.com/Yagna3903'" />
         </div>
       </div>
-    </nav>
-    <!--This is the main content of the website-->
-    <section id="profile" data-aos="fade-up">
-  <div class="profile-section-inner">
-    <div class="profile-pic-clean">
-      <img src="./assets/profile.jpg" alt="Yagna Patel" class="profile-pic" />
     </div>
-    <div class="profile-text">
-      <p class="section__text__p1">Hello, I'm</p>
-      <h1 class="title">Yagna Patel</h1>
-      <p class="section__text__p2">
-        Computer Systems Technology Student at Sheridan College
-      </p>
-      <div class="btn-container">
-        <button
-          class="btn btn-color-2"
-          onclick="window.open('./assets/Yagna_Patel_Resume.pdf')"
-        >
-          Download Resume
-        </button>
-        <button class="btn btn-color-1" onclick="location.href='./#contact'">
-          Contact info
-        </button>
-      </div>
-      <div id="socials-container">
-        <img
-          src="./assets/linkedin-brands.svg"
-          alt="My linkedin profile"
-          class="icon"
-          onclick="location.href='https://linkedin.com/in/yagna--patel'"
-        />
-        <img
-          src="./assets/github-brands.svg"
-          alt="My GitHub profile"
-          class="icon"
-          onclick="location.href='https://github.com/Yagna3903'"
-        />
-      </div>
-    </div>
-  </div>
-</section>
-    <!--This is the about me section of the website-->
-    <section id="about" data-aos="fade-up">
-  <div class="section-inner">
-    <p class="section__text__p1">Get To Know More</p>
-    <h1 class="title">About Me</h1>
-    <div class="about-main">
-      <div class="about-content">
-        <div class="about-highlights">
-          <div class="highlight">
-            <img src="./assets/experience.png" alt="Experience icon" class="icon" />
-            <div>
-              <h3>Professional Experience</h3>
-              <ol>
-                <li>IT infastructure and DevOps Co-op | <b><i>Sheridan College</i></b></li><br>
-                <li>Associate Technical Consultant Co-op | <b><i>MindQuad Solutions</i></b></li><br>
-                <li>Full-Stack Developer Co-op | <b><i>Samskrita Bharati</i></b></li><br>
-              </ol>
+  </section>
+  <!--This is the about me section of the website-->
+  <section id="about" data-aos="fade-up">
+    <div class="section-inner">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="about-main">
+        <div class="about-content">
+          <div class="about-highlights">
+            <div class="highlight">
+              <img src="./assets/experience.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Professional Experience</h3>
+                <ol>
+                  <li>IT infrastructure and DevOps Co-op | <b><i>Sheridan College</i></b></li><br>
+                  <li>Associate Technical Consultant Co-op | <b><i>MindQuad Solutions</i></b></li><br>
+                  <li>Full-Stack Developer Co-op | <b><i>Samskrita Bharati</i></b></li><br>
+                </ol>
+              </div>
+            </div>
+            <div class="highlight">
+              <img src="./assets/education.png" alt="Education icon" class="icon" />
+              <div>
+                <h3>Education</h3>
+                <p>
+                  <i>Computer Systems Technology - Information Systems Engineering</i> <br>
+                  <b><i>Sheridan College</i></b>
+                </p>
+              </div>
             </div>
           </div>
-          <div class="highlight">
-            <img src="./assets/education.png" alt="Education icon" class="icon" />
-            <div>
-              <h3>Education</h3>
-              <p>
-                <i>Computer Systems Technology - Information Systems Engineering</i> <br>
-                <b><i>Sheridan College</i></b>
-              </p>
+          <div class="about-description highlight-card">
+            <span class="quote-icon">❝</span>
+            <p>
+              Hi, I'm <b>Yagna Patel</b>.<br>
+              I'm a Computer Systems Technology student at Sheridan College with a passion for technology,
+              problem-solving, and continuous learning.<br>
+              My experience spans software development, web applications, system automation, cloud technologies, and
+              AI/ML, contributing to real-world projects across diverse domains.<br>
+              I’ve worked across various tools, languages, and platforms, with a focus on building reliable, scalable,
+              and impactful solutions.<br>
+              I enjoy collaborating with others, embracing new challenges, and writing clean, thoughtful code that makes
+              a difference.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--This is the experience section of the website which includes skills-->
+  <section id="experience" data-aos="fade-up">
+    <div class="section-inner">
+      <p class="section__text__p1">My Technical Toolkit</p>
+      <h1 class="title">Experience</h1>
+      <div class="skills-container">
+        <div class="skill-category">
+          <img src="./assets/frontend.png" alt="Frontend Icon" class="icon" />
+          <h2>Languages & Frameworks</h2>
+          <ul>
+            <li>Java, Python, C, C#, Kotlin, PHP
+              JavaScript, Angular, Spring Boot, .NET, Ionic, Nix, Laravel</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <img src="./assets/devops.png" alt="DevOps Icon" class="icon" />
+          <h2>DevOps & Automation</h2>
+          <ul>
+            <li>Ansible, Terraform, Packer, Docker, Jenkins, GitHub Actions,
+              REST APIs</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <img src="./assets/cloud.png" alt="Cloud Icon" class="icon" />
+          <h2>Cloud & Tools</h2>
+          <ul>
+            <li>AWS, Azure, GCP, Microsoft 365,
+              Cisco Packet Tracer, Wireshark, VirtualBox, Git, Snipe-IT</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <img src="./assets/database.png" alt="Database Icon" class="icon" />
+          <h2>Databases</h2>
+          <ul>
+            <li>MySQL, PostgreSQL, Oracle, MongoDB, Supabase, SQL</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <img src="./assets/os.png" alt="Operating Systems Icon" class="icon" />
+          <h2>Operating Systems</h2>
+          <ul>
+            <li>Windows, macOS, Linux (Ubuntu, NixOS), Android</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <img src="./assets/project.png" alt="Project Management Icon" class="icon" />
+          <h2>Project Management & Collaboration</h2>
+          <ul>
+            <li>Agile, Scrum, Jira, Trello, Figma, Power BI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--This is the projects section of the website which includes my recent projects-->
+  <section id="projects" data-aos="fade-up">
+    <div class="section-inner">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="projects-gallery">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <img src="./assets/project1.webp" alt="BearHacks Hackathon" class="project-img" />
+          <div class="project-info">
+            <h3>CareerCraft AI</h3>
+            <span class="project-role">Full-Stack AI Web Application</span>
+            <span class="project-duration">Hackathon 2025</span>
+            <p>
+              Developed a full-stack AI MVP in 36 hours for BearHacks. Focused on innovative solutions and rapid
+              prototyping in a collaborative team environment.
+            </p>
+            <div class="project-tech">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">API Keys</span>
+              <span class="project-tag">Supabase</span>
+              <span class="project-tag">ReactJS</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Yagna3903/Hackathon-Bearhacks.git" target="_blank" class="btn">GitHub</a>
             </div>
           </div>
         </div>
-        <div class="about-description highlight-card">
-          <span class="quote-icon">❝</span>
-          <p>
-            Hi, I'm <b>Yagna Patel</b>.<br>
-            I'm a Computer Systems Technology student at Sheridan College with a passion for technology, problem-solving, and continuous learning.<br>
-            My experience spans software development, web applications, system automation, cloud technologies, and AI/ML, contributing to real-world projects across diverse domains.<br>
-            I’ve worked across various tools, languages, and platforms, with a focus on building reliable, scalable, and impactful solutions.<br>
-            I enjoy collaborating with others, embracing new challenges, and writing clean, thoughtful code that makes a difference.
-          </p>         
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-    <!--This is the experience section of the website which includes skills-->
-    <section id="experience" data-aos="fade-up">
-  <div class="section-inner">
-    <p class="section__text__p1">My Technical Toolkit</p>
-    <h1 class="title">Experience</h1>
-    <div class="skills-container">
-      <div class="skill-category">
-        <img src="./assets/frontend.png" alt="Frontend Icon" class="icon" />
-        <h2>Languages & Frameworks</h2>
-        <ul>
-          <li>Java, Python, C, C#, Kotlin, PHP
-          JavaScript, Angular, Spring Boot, .NET, Ionic, Nix, Laravel</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <img src="./assets/devops.png" alt="DevOps Icon" class="icon" />
-        <h2>DevOps & Automation</h2>
-        <ul>
-          <li>Ansible, Terraform, Packer, Docker, Jenkins, GitHub Actions, 
-          REST APIs</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <img src="./assets/cloud.png" alt="Cloud Icon" class="icon" />
-        <h2>Cloud & Tools</h2>
-        <ul>
-          <li>AWS, Azure, GCP, Microsoft 365, 
-          Cisco Packet Tracer, Wireshark, VirtualBox, Git, Snipe-IT</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <img src="./assets/database.png" alt="Database Icon" class="icon" />
-        <h2>Databases</h2>
-        <ul>
-          <li>MySQL, PostgreSQL, Oracle, MongoDB, Supabase, SQL</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <img src="./assets/os.png" alt="Operating Systems Icon" class="icon" />
-        <h2>Operating Systems</h2>
-        <ul>
-          <li>Windows, macOS, Linux (Ubuntu, NixOS), Android</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <img src="./assets/project.png" alt="Project Management Icon" class="icon" />
-        <h2>Project Management & Collaboration</h2>
-        <ul>
-          <li>Agile, Scrum, Jira, Trello, Figma, Power BI</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-    <!--This is the projects section of the website which includes my recent projects-->    
-    <section id="projects" data-aos="fade-up">
-  <div class="section-inner">
-    <p class="section__text__p1">Browse My Recent</p>
-    <h1 class="title">Projects</h1>
-    <div class="projects-gallery">
-      <!-- Project 1 -->
-      <div class="project-card">
-        <img src="./assets/project1.webp" alt="BearHacks Hackathon" class="project-img" />
-        <div class="project-info">
-          <h3>CareerCraft AI</h3>
-          <span class="project-role">Full-Stack AI Web Application</span>
-          <span class="project-duration">Hackathon 2025</span>
-          <p>
-            Developed a full-stack AI MVP in 36 hours for BearHacks. Focused on innovative solutions and rapid prototyping in a collaborative team environment.
-          </p>
-          <div class="project-tech">
-            <span class="project-tag">Python</span>
-            <span class="project-tag">API Keys</span>
-            <span class="project-tag">Supabase</span>
-            <span class="project-tag">ReactJS</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/Yagna3903/Hackathon-Bearhacks.git" target="_blank" class="btn">GitHub</a>
-          </div>
-        </div>
-      </div>
-      <!-- Project 2 -->
-      <div class="project-card">
-        <img src="./assets/project 2.png" alt="Highlander Simulator" class="project-img" />
-        <div class="project-info">
-          <h3>Highlander Simulator</h3>
-          <span class="project-role">Simulation Tool</span>
-          <span class="project-duration">2024</span>
-          <p>
-            Created a simulation tool to model and analyze scenarios for process optimization. Emphasized clean code, user-friendly design, and actionable insights.
-          </p>
-          <div class="project-tech">
-            <span class="project-tag">C#</span>
-            <span class="project-tag">.Net Frameworks</span>
-            <span class="project-tag">Figma</span>
-            <span class="project-tag">MySQL</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/Yagna3903/Highlander-Simulator" target="_blank" class="btn">GitHub</a>
+        <!-- Project 2 -->
+        <div class="project-card">
+          <img src="./assets/project 2.png" alt="Highlander Simulator" class="project-img" />
+          <div class="project-info">
+            <h3>Highlander Simulator</h3>
+            <span class="project-role">Simulation Tool</span>
+            <span class="project-duration">2024</span>
+            <p>
+              Created a simulation tool to model and analyze scenarios for process optimization. Emphasized clean code,
+              user-friendly design, and actionable insights.
+            </p>
+            <div class="project-tech">
+              <span class="project-tag">C#</span>
+              <span class="project-tag">.Net Frameworks</span>
+              <span class="project-tag">Figma</span>
+              <span class="project-tag">MySQL</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Yagna3903/Highlander-Simulator" target="_blank" class="btn">GitHub</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-</section>
-<!-- This is the certification section of the website -->
-<section id="certification" data-aos="fade-up">
-  <div class="section-inner">
-    <p class="section__text__p1">My Achievements</p>
-    <h1 class="title">Certification</h1>
-    <div class="certification-list">
-      <div class="cert-card">
-        <a href="https://www.credly.com/badges/e89a53f3-a99d-41f8-8e3c-7fce246e7f29/public_url" target="_blank">
-        <img src="./assets/github-foundations.png" alt="Certification Badge" class="cert-img" />
-        </a>
-        <h3>GitHub Foundations</h3>
-        <p>Issued by GitHub • 2025</p>
-      </div>
-      <!-- Add more .cert-card as needed -->
-    </div>
-  </div>
-</section>
-<section 
-id="contact" data-aos="fade-up">
-  <div class="section-inner">
-    <p class="section__text__p1">Get in Touch</p>
-    <h1 class="title">Contact</h1>
-    <div class="contact-card contact-row">
-      <div class="contact-method">
-        <img src="./assets/envelope-solid.svg" alt="Email" class="contact-icon" />
-        <a href="mailto:yagna.pattel@gmail.com">Email</a>
-      </div>
-      <div class="contact-method">
-        <img src="./assets/linkedin-brands.svg" alt="LinkedIn" class="contact-icon" />
-        <a href="https://www.linkedin.com/in/yagna--patel" target="_blank">LinkedIn</a>
-      </div>
-      <div class="contact-method">
-        <img src="./assets/github-brands.svg" alt="GitHub" class="contact-icon" />
-        <a href="https://github.com/Yagna3903" target="_blank">GitHub</a>
+  </section>
+  <!-- This is the certification section of the website -->
+  <section id="certification" data-aos="fade-up">
+    <div class="section-inner">
+      <p class="section__text__p1">My Achievements</p>
+      <h1 class="title">Certification</h1>
+      <div class="certification-list">
+        <div class="cert-card">
+          <a href="https://www.credly.com/badges/e89a53f3-a99d-41f8-8e3c-7fce246e7f29/public_url" target="_blank">
+            <img src="./assets/github-foundations.png" alt="Certification Badge" class="cert-img" />
+          </a>
+          <h3>GitHub Foundations</h3>
+          <p>Issued by GitHub • 2025</p>
+        </div>
+        <!-- Add more .cert-card as needed -->
       </div>
     </div>
-  </div>
+  </section>
+  <section id="contact" data-aos="fade-up">
+    <div class="section-inner">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact</h1>
+      <div class="contact-card contact-row">
+        <div class="contact-method">
+          <img src="./assets/envelope-solid.svg" alt="Email" class="contact-icon" />
+          <a href="mailto:yagna.pattel@gmail.com">Email</a>
+        </div>
+        <div class="contact-method">
+          <img src="./assets/linkedin-brands.svg" alt="LinkedIn" class="contact-icon" />
+          <a href="https://www.linkedin.com/in/yagna--patel" target="_blank">LinkedIn</a>
+        </div>
+        <div class="contact-method">
+          <img src="./assets/github-brands.svg" alt="GitHub" class="contact-icon" />
+          <a href="https://github.com/Yagna3903" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
     <footer>
-  <div class="footer-inner">
-    <div class="footer-links">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#certification">Certification</a> <!-- Added -->
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="footer-socials">
-      <a href="mailto:yagna.pattel@gmail.com" title="Email" class="footer-social-link">
-        <img src="./assets/envelope-solid.svg" alt="Email" class="footer-icon" />
-      </a>
-      <a href="https://www.linkedin.com/in/yagna--patel" target="_blank" title="LinkedIn" class="footer-social-link">
-        <img src="./assets/linkedin-brands.svg" alt="LinkedIn" class="footer-icon" />
-      </a>
-      <a href="https://github.com/Yagna3903" target="_blank" title="GitHub" class="footer-social-link">
-        <img src="./assets/github-brands.svg" alt="GitHub" class="footer-icon" />
-      </a>
-    </div>
-    <div class="footer-copy">
-      &copy; 2025 Yagna Patel &mdash; All rights reserved.
-    </div>
-  </div>
-</footer>    
+      <div class="footer-inner">
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#certification">Certification</a> <!-- Added -->
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-socials">
+          <a href="mailto:yagna.pattel@gmail.com" title="Email" class="footer-social-link">
+            <img src="./assets/envelope-solid.svg" alt="Email" class="footer-icon" />
+          </a>
+          <a href="https://www.linkedin.com/in/yagna--patel" target="_blank" title="LinkedIn"
+            class="footer-social-link">
+            <img src="./assets/linkedin-brands.svg" alt="LinkedIn" class="footer-icon" />
+          </a>
+          <a href="https://github.com/Yagna3903" target="_blank" title="GitHub" class="footer-social-link">
+            <img src="./assets/github-brands.svg" alt="GitHub" class="footer-icon" />
+          </a>
+        </div>
+        <div class="footer-copy">
+          &copy; 2025 Yagna Patel &mdash; All rights reserved.
+        </div>
+      </div>
+    </footer>
     <script src="script.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 900, once: true });
-</script>
-  </body>
+    <script>
+      AOS.init({ duration: 900, once: true });
+    </script>
+</body>
+
 </html>
