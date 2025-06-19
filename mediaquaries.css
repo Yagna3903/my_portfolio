@@ -23,6 +23,7 @@
     box-shadow: 0 6px 32px -12px rgba(60, 60, 60, 0.1);
     position: relative;
     z-index: 100;
+    margin-bottom: 3rem;
   }
   #hamburger-nav .logo {
     margin: 0;
