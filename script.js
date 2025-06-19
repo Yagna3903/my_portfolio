@@ -53,4 +53,19 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function (e) {
+    const menu = document.querySelector('.menu-links');
+    const icon = document.querySelector('.hamburger-icon');
+    const hamburgerNav = document.getElementById('hamburger-nav');
+    if (
+      menu.classList.contains('open') &&
+      !menu.contains(e.target) &&
+      !icon.contains(e.target)
+    ) {
+      menu.classList.remove('open');
+      icon.classList.remove('open');
+    }
+  });
 });
