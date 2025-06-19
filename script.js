@@ -68,4 +68,38 @@ document.addEventListener('DOMContentLoaded', function () {
       icon.classList.remove('open');
     }
   });
+
+  // Typewriter loop effect
+  const text = "Yagna Patel";
+  const el = document.getElementById("typewriter-title");
+  let i = 0;
+  let isDeleting = false;
+  let speed = 180;
+
+  function typeLoop() {
+    // Always show caret after the last character
+    let displayText = '';
+    if (!isDeleting) {
+      displayText = text.substring(0, i + 1);
+      i++;
+      if (i === text.length) {
+        isDeleting = true;
+        el.innerHTML = displayText + '<span class="caret"></span>';
+        setTimeout(typeLoop, 3000); // Pause at end
+        return;
+      }
+    } else {
+      displayText = i > 0 ? text.substring(0, i - 1) : "\u00A0";
+      i--;
+      if (i === 0) {
+        isDeleting = false;
+        el.innerHTML = displayText + '<span class="caret"></span>';
+        setTimeout(typeLoop, 500); // Pause at start
+        return;
+      }
+    }
+    el.innerHTML = displayText + '<span class="caret"></span>';
+    setTimeout(typeLoop, isDeleting ? 100 : speed);
+  }
+  typeLoop();
 });
