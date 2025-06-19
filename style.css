@@ -968,6 +968,7 @@ body.dark-mode .about-description.highlight-card:hover {
 body.dark-mode #hamburger-nav {
   background: #181c20 !important;
   box-shadow: 0 6px 32px -12px rgba(0, 0, 0, 0.22) !important;
+  margin-bottom: 3rem;
 }
 
 body.dark-mode #hamburger-nav .logo {
