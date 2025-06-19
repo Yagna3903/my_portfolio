@@ -59,7 +59,7 @@ a,
   position: relative;
   z-index: 10;
   border-radius: 1.2rem;
-  margin: 18px auto 0 auto;
+  margin: 18px auto 3rem auto;
   max-width: 1200px;
   transition: background 0.3s, box-shadow 0.3s;
 }
@@ -67,6 +67,7 @@ a,
 body.dark-mode #desktop-nav {
   background: #181c20;
   box-shadow: 0 6px 32px -12px rgba(0, 0, 0, 0.22);
+  margin-bottom: 3rem;
 }
 
 /* Logo: neutral, bold, with padding for card feel */
@@ -362,7 +363,7 @@ body.dark-mode .menu-links::after {
 /* Sections */
 section {
   padding-top: 4vh;
-  min-height: 60vh;
+  /* min-height: 60vh; */
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   box-sizing: border-box;
@@ -374,7 +375,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 70vh;
+  min-height: auto;
   background: none;
   padding: 0;
 }
@@ -699,7 +700,7 @@ section {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
+  /* height: 70vh; */
 }
 
 .contact-card {
@@ -863,7 +864,7 @@ footer {
 /* --- Certification Section --- */
 #certification {
   padding-top: 4vh;
-  min-height: 40vh;
+  /* min-height: 40vh; */
   width: 100%;
 }
 
