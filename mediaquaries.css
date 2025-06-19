@@ -1,7 +1,7 @@
 @media screen and (max-width: 1400px) {
   #profile {
-    height: 83vh;
-    margin-bottom: 0rem;
+    height: auto;
+    margin-bottom: 3rem;
   }
 }
 
@@ -129,7 +129,6 @@
   #contact, 
   footer {
     height: auto;
-    padding-bottom: 2rem;
   }
 
   /* Contact section: stack cards */
