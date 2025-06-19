@@ -54,8 +54,8 @@ a,
   padding: 0 3vw;
   height: 84px;
   background: #fff;
-  box-shadow: 0 6px 32px -12px rgba(60, 60, 60, 0.10);
-  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 6px 32px -12px rgba(60, 60, 60, 0.1);
+  font-family: "Poppins", sans-serif;
   position: relative;
   z-index: 10;
   border-radius: 1.2rem;
@@ -64,10 +64,9 @@ a,
   transition: background 0.3s, box-shadow 0.3s;
 }
 
-/* Dark mode card */
 body.dark-mode #desktop-nav {
   background: #181c20;
-  box-shadow: 0 6px 32px -12px rgba(0,0,0,0.22);
+  box-shadow: 0 6px 32px -12px rgba(0, 0, 0, 0.22);
 }
 
 /* Logo: neutral, bold, with padding for card feel */
@@ -114,15 +113,17 @@ body.dark-mode .nav-links li a {
 
 /* Minimal underline animation in neutral color */
 .nav-links li a::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
-  left: 0; right: 0; bottom: -3px;
+  left: 0;
+  right: 0;
+  bottom: -3px;
   height: 2px;
   background: #bbb;
   border-radius: 1px;
   transform: scaleX(0);
-  transition: transform 0.22s cubic-bezier(.4,0,.2,1);
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body.dark-mode .nav-links li a::after {
@@ -185,7 +186,6 @@ body.dark-mode .nav-links li a:focus {
   opacity: 0;
 }
 
-/* Toggle Dot as Sun (light mode) */
 .toggle-dot {
   position: absolute;
   left: 4px;
@@ -199,9 +199,8 @@ body.dark-mode .nav-links li a:focus {
   z-index: 2;
 }
 
-/* Sun rays: thin, short, and evenly spaced */
 .toggle-dot::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 50%;
   top: 50%;
@@ -209,17 +208,15 @@ body.dark-mode .nav-links li a:focus {
   height: 28px;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  background:
-    repeating-conic-gradient(
-      #ffe066 0deg 5deg,
-      transparent 5deg 45deg
-    );
+  background: repeating-conic-gradient(
+    #ffe066 0deg 5deg,
+    transparent 5deg 45deg
+  );
   border-radius: 50%;
   opacity: 0.55;
   z-index: 1;
 }
 
-/* Toggle Dot as Moon (dark mode) */
 #toggle-dark-mobile:checked + .toggle-label .toggle-dot,
 #toggle-dark:checked + .toggle-label .toggle-dot {
   left: 28px;
@@ -238,7 +235,7 @@ body.dark-mode .nav-links li a:focus {
 
 #toggle-dark-mobile:checked + .toggle-label .toggle-dot::before,
 #toggle-dark:checked + .toggle-label .toggle-dot::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 8px;
   top: 2px;
@@ -249,41 +246,21 @@ body.dark-mode .nav-links li a:focus {
   z-index: 3;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  #desktop-nav {
-    flex-direction: column;
-    height: auto;
-    padding: 1.2rem 1vw;
-    box-shadow: 0 2px 10px -6px rgba(60, 60, 60, 0.09);
-    border-radius: 0.7rem;
-    margin-top: 10px;
-  }
-  .logo {
-    font-size: 1.7rem;
-    margin-bottom: 0.7rem;
-    padding: 0.15em 0.5em 0.15em 0.1em;
-  }
-  .nav-links {
-    gap: 1.1rem;
-    font-size: 1rem;
-  }
-  .theme-toggle-mobile {
-    margin-top: 2rem;
-    margin-bottom: 2.5rem; /* Add extra space at the bottom */
-    display: flex;
-    justify-content: center;
-  }
-}
-
 /* Hamburger Menu */
 #hamburger-nav {
   display: none;
+  width: 100%;
 }
 
-.hamburger-menu {
+#hamburger-nav .logo {
+  flex: 0 0 auto;
+}
+
+.hamburger-icon {
   position: relative;
   display: inline-block;
+  flex: 0 0 auto;
+  margin-left: auto;
 }
 
 .hamburger-icon {
@@ -303,19 +280,30 @@ body.dark-mode .nav-links li a:focus {
 }
 
 .menu-links {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
   align-items: center;
   justify-content: center;
-  display: flex;
   flex-direction: column;
-  position: fixed;
-  z-index: 101;
+  z-index: 9999 !important;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  background: rgba(255, 255, 255, 0.65); /* glass effect for light mode */
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: 0 6px 32px -12px rgba(60, 60, 60, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-links.open {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .menu-links a {
@@ -344,14 +332,30 @@ body.dark-mode .nav-links li a:focus {
 .menu-links::after {
   content: "";
   position: absolute;
-  left: 0; right: 0; bottom: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   height: 36px;
   pointer-events: none;
-  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.85));
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.85)
+  );
   z-index: 2;
 }
+body.dark-mode .menu-links {
+  background: rgba(24, 28, 32, 0.65) !important;
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+}
+
+body.dark-mode .menu-links a {
+  color: #f3f3f3 !important;
+}
+
 body.dark-mode .menu-links::after {
-  background: linear-gradient(to bottom, rgba(24,28,32,0), #181c20 90%);
+  background: linear-gradient(to bottom, rgba(24, 28, 32, 0), #181c20 90%);
 }
 
 /* Sections */
@@ -391,7 +395,7 @@ section {
   height: 260px;
   border-radius: 50%;
   background: conic-gradient(from 180deg at 50% 50%, #a5b4fc 0%, #f0fdfa 100%);
-  box-shadow: 0 8px 36px -10px rgba(60,60,60,0.18);
+  box-shadow: 0 8px 36px -10px rgba(60, 60, 60, 0.18);
   position: relative;
   margin-bottom: 1.5rem;
 }
@@ -402,7 +406,7 @@ section {
   object-fit: cover;
   border-radius: 50%;
   border: 6px solid #fff;
-  box-shadow: 0 4px 24px 0 rgba(60,60,60,0.10);
+  box-shadow: 0 4px 24px 0 rgba(60, 60, 60, 0.1);
   background: #fff;
   display: block;
   transition: box-shadow 0.2s;
@@ -527,7 +531,7 @@ section {
   background: var(--secondary-color);
   border-radius: 1rem;
   padding: 1rem 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   min-width: 220px;
   margin: 0 auto;
   justify-content: center;
@@ -551,15 +555,6 @@ section {
   text-align: center;
 }
 
-/* Responsive for About Section */
-@media (max-width: 900px) {
-  .about-highlights {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-  }
-}
-
 /* EXPERIENCE SECTION */
 #experience {
   position: relative;
@@ -579,7 +574,7 @@ section {
   padding: 1.5rem 2rem;
   min-width: 220px;
   max-width: 320px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -604,18 +599,6 @@ section {
   height: 2.2rem;
   margin-bottom: 0.5rem;
 }
-/* Responsive for mobile */
-@media (max-width: 900px) {
-  .skills-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .skill-category {
-    width: 90%;
-    min-width: unset;
-    max-width: unset;
-  }
-}
 
 /* PROJECTS SECTION */
 .projects-gallery {
@@ -628,7 +611,7 @@ section {
 .project-card {
   background: var(--secondary-color);
   border-radius: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -639,7 +622,7 @@ section {
 }
 .project-card:hover {
   transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
 }
 .project-img {
   width: 100%;
@@ -663,7 +646,8 @@ section {
   font-size: 1.15rem;
   color: var(--accent-color);
 }
-.project-role, .project-duration {
+.project-role,
+.project-duration {
   display: block;
   font-size: 1rem;
   color: #888;
@@ -708,16 +692,6 @@ section {
 .project-links .btn:hover {
   background: var(--accent-color-dark, #333);
 }
-/* Responsive */
-@media (max-width: 900px) {
-  .projects-gallery {
-    flex-direction: column;
-    align-items: center;
-  }
-  .project-card {
-    max-width: 95vw;
-  }
-}
 
 /* CONTACT SECTION */
 #contact {
@@ -730,7 +704,7 @@ section {
 .contact-card {
   background: var(--secondary-color);
   border-radius: 1.2rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   padding: 2rem 2.2rem;
   margin: 2rem auto 0 auto;
   max-width: 400px;
@@ -768,21 +742,13 @@ section {
   text-decoration: underline;
   color: var(--accent-color-dark, #333);
 }
-/* Responsive: stack on small screens */
-@media (max-width: 600px) {
-  .contact-card.contact-row {
-    flex-direction: column;
-    gap: 1.2rem;
-    align-items: center;
-  }
-}
 
 /* Footer */
 footer {
   background: var(--secondary-color);
   padding: 2.2rem 0 1.2rem 0;
   margin-top: 3rem;
-  box-shadow: 0 -2px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.04);
 }
 
 .footer-inner {
@@ -816,8 +782,8 @@ footer {
 
 .footer-links a:hover {
   color: var(--accent-color-dark, #333);
-  background: rgba(0,0,0,0.04);
-  text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: rgba(0, 0, 0, 0.04);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .footer-socials {
@@ -859,72 +825,11 @@ footer {
   letter-spacing: 0.01em;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .footer-links {
-    gap: 1.1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .footer-socials {
-    gap: 0.8rem;
-  }
-  .footer-inner {
-    padding: 0 1rem;
-  }
-}
-
-/* Toggle Switch */
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 24px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  background-color: #ccc;
-  transition: .4s;
-  border-radius: 24px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  transition: .4s;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: #4caf50;
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
 /* Highlight Card (About Description) */
 .highlight-card {
   background: var(--secondary-color);
   border-radius: 1.2rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   padding: 2rem 2.2rem 1.5rem 2.2rem;
   margin: 1.5rem auto 0 auto;
   max-width: 600px;
@@ -934,7 +839,7 @@ input:checked + .slider:before {
   transition: box-shadow 0.2s;
 }
 .highlight-card:hover {
-  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13);
 }
 .quote-icon {
   font-size: 2.5rem;
@@ -944,105 +849,13 @@ input:checked + .slider:before {
   line-height: 1;
 }
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px);}
-  to { opacity: 1; transform: translateY(0);}
-}
-
-/* Hamburger nav only visible on small screens */
-#hamburger-nav {
-  display: none;
-}
-
-@media (max-width: 900px) {
-  #desktop-nav {
-    display: none;
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  #hamburger-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1.2rem;
-    height: 70px;
-    background: #fff;
-    border-radius: 1.2rem;
-    box-shadow: 0 6px 32px -12px rgba(60, 60, 60, 0.10);
-    position: relative;
-    z-index: 100;
-  }
-  #hamburger-nav .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #222;
-    margin-right: auto;
-  }
-  .hamburger-icon {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6px;
-    cursor: pointer;
-    margin-left: auto;
-    z-index: 102;
-  }
-  .hamburger-icon span {
-    display: block;
-    height: 4px;
-    width: 100%;
-    background: #444;
-    border-radius: 2px;
-    transition: all 0.3s;
-  }
-  .menu-links {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(255,255,255,0.98);
-    box-shadow: 0 8px 32px -8px rgba(60,60,60,0.13);
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; /* Start at the top */
-    z-index: 101;
-    overflow-y: auto; /* Allow scrolling if needed */
-    padding-top: 80px; /* Space for logo/hamburger if needed */
-  }
-  .menu-links.open {
-    display: flex;
-  }
-  .menu-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-    width: 100%;
-  }
-  .menu-links li a {
-    color: #222;
-    font-size: 1.3rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .theme-toggle-mobile {
-    margin-top: 2rem;
-    margin-bottom: 2.5rem; /* Add extra space at the bottom */
-    display: flex;
-    justify-content: center;
-  }
-  body.dark-mode #hamburger-nav {
-    background: #181c20;
-  }
-  body.dark-mode .menu-links {
-    background: #181c20;
-  }
-  body.dark-mode .menu-links li a {
-    color: #fff;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -1073,7 +886,7 @@ input:checked + .slider:before {
 .cert-card {
   background: var(--secondary-color);
   border-radius: 1.2rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   padding: 1.5rem 2rem;
   min-width: 220px;
   max-width: 340px;
@@ -1082,7 +895,7 @@ input:checked + .slider:before {
 }
 
 .cert-card:hover {
-  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13);
   background: #f3f3f3;
 }
 
@@ -1091,7 +904,7 @@ body.dark-mode .cert-card {
 }
 
 body.dark-mode .cert-card:hover {
-  box-shadow: 0 6px 24px rgba(255,255,255,0.10);
+  box-shadow: 0 6px 24px rgba(255, 255, 255, 0.1);
   background: #23272b;
 }
 
@@ -1112,7 +925,7 @@ body.dark-mode .contact-icon {
 /* Example: for spans with a white background in dark mode */
 body.dark-mode span.project-tag,
 body.dark-mode .project-span {
-  color: #222 !important;      /* or any dark color */
+  color: #222 !important; /* or any dark color */
   background: #fff !important; /* if you want the background to stay white */
 }
 
@@ -1141,28 +954,26 @@ body.dark-mode .project-links .btn:hover {
 }
 
 .about-description.highlight-card:hover {
-  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13);
   background: #f3f3f3;
   transition: box-shadow 0.2s, background 0.2s;
 }
 
 body.dark-mode .about-description.highlight-card:hover {
-  box-shadow: 0 6px 24px rgba(255,255,255,0.10);
+  box-shadow: 0 6px 24px rgba(255, 255, 255, 0.1);
   background: #23272b;
   transition: box-shadow 0.2s, background 0.2s;
+}
+
+body.dark-mode #hamburger-nav {
+  background: #181c20 !important;
+  box-shadow: 0 6px 32px -12px rgba(0, 0, 0, 0.22) !important;
 }
 
 body.dark-mode #hamburger-nav .logo {
   color: #f3f3f3 !important;
 }
 
-@media (max-width: 600px) {
-  .section__text__p2 {
-    text-align: center;
-    max-width: 95vw;
-    margin: 0 auto 1rem auto;
-    padding: 0 8px;
-    font-size: 1.1rem;
-    word-break: break-word;
-  }
+body.dark-mode .hamburger-icon span {
+  background-color: #f3f3f3 !important;
 }
