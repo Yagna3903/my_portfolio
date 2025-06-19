@@ -250,6 +250,7 @@ body.dark-mode .nav-links li a:focus {
 #hamburger-nav {
   display: none;
   width: 100%;
+  margin-bottom: 3rem;
 }
 
 #hamburger-nav .logo {
