@@ -980,3 +980,39 @@ body.dark-mode #hamburger-nav .logo {
 body.dark-mode .hamburger-icon span {
   background-color: #f3f3f3 !important;
 }
+
+/* Typewriter effect for .title */
+#typewriter-title {
+  display: inline-block;
+  min-width: 11ch;
+  min-height: 1.2em;
+  font-family: 'Fira Mono', 'Roboto Mono', monospace;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--text-color);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 auto;
+  background: none;
+  text-shadow: none;
+}
+
+.profile-text {
+  text-align: center;
+}
+
+/* Add this to your style.css */
+.caret {
+  display: inline-block;
+  width: 0.15em;
+  height: 1em;
+  vertical-align: bottom;
+  border-right: 0.15em solid var(--text-color);
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--text-color); }
+}
