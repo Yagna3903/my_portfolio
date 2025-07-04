@@ -875,6 +875,16 @@ footer {
   width: 100%;
 }
 
+.cert-img1 {
+  width: 150px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .certification-inner {
   max-width: 900px;
   margin: 0 auto;
