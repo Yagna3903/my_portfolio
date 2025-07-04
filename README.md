@@ -99,4 +99,10 @@ Feel free to connect with me:
 
 ---
 
-> © 2025 Yagna Patel — All rights reserved.
+## License
+
+This project is licensed under a custom "All Rights Reserved" license.  
+Please note that reuse, copying, or modification of this code without explicit permission is strictly prohibited.
+
+See [LICENSE.txt](./LICENSE.txt) for full terms.
+
