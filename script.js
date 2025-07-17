@@ -103,3 +103,5 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   typeLoop();
 });
+
+// this is script.js file for my portfolio
