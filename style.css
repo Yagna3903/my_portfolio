@@ -1033,5 +1033,5 @@ body.dark-mode .hamburger-icon span {
   from, to { border-color: transparent }
   50% { border-color: var(--text-color); }
 }
-
+/* --- General Styles --- */
 /* This is my Style.css file where all the css is and I might need to modify it later this is v1.0.0 */ 
