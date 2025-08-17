@@ -563,6 +563,13 @@ section {
   line-height: 1.7;
   text-align: center;
 }
+.highlight ol {
+  padding-left: 1.2rem; /* space before numbers */
+}
+
+.highlight ol li {
+  margin-bottom: 0.3rem; /* space between items */
+}
 
 /* EXPERIENCE SECTION */
 #experience {
