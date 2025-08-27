@@ -1,5 +1,5 @@
 
-# 💼 Yagna Patel - Portfolio Website
+# 💼 Yagna Patel's - Portfolio Website
 
 Welcome to the source code of my personal portfolio website, designed and developed to showcase my technical skills, professional experiences, projects, and certifications in a modern, minimal, and responsive format.
 
@@ -42,31 +42,6 @@ cd my_portfolio
 ```
 
 No build tools or installations are required.
-
----
-
-## 📚 Featured Projects
-
-### 🧠 CareerCraft AI — BearHacks 2025
-- Built a full-stack AI web application MVP within 36 hours
-- Designed to assist users in career planning using AI suggestions
-- **Tech Used:** ReactJS, Python, Supabase, API Keys
-- 🔗 [GitHub Repo](https://github.com/Yagna3903/Hackathon-Bearhacks.git)
-
----
-
-### 🛡️ Highlander Simulator — Academic Project
-- Desktop simulation tool to model and analyze combat logic
-- Emphasis on code architecture, visual design, and data tracking
-- **Tech Used:** C#, .NET, MySQL, Figma
-- 🔗 [GitHub Repo](https://github.com/Yagna3903/Highlander-Simulator)
-
----
-
-## 🏅 Certification
-
-- **GitHub Foundations** — *Issued by GitHub, 2025*  
-  🔗 [View Credential](https://www.credly.com/badges/e89a53f3-a99d-41f8-8e3c-7fce246e7f29/public_url)
 
 ---
 
