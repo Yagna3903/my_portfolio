@@ -1,0 +1,165 @@
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 1400px) {
+  #profile {
+    height: auto;
+    margin-bottom: 3rem;
+  }
+}
+
+/* 900px and below: Hide desktop nav, show hamburger, adjust section padding */
+@media screen and (max-width: 900px) {
+  #desktop-nav {
+    display: none;
+  }
+  #hamburger-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw; /* Ensure full width */
+    box-sizing: border-box;
+    padding: 0 1.2rem;
+    height: 70px;
+    background: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 0 6px 32px -12px rgba(60, 60, 60, 0.1);
+    position: relative;
+    z-index: 100;
+    margin-bottom: 3rem;
+  }
+  #hamburger-nav .logo {
+    margin: 0;
+    font-size: 1.7rem;
+    padding: 0.15em 0.5em 0.15em 0.1em;
+  }
+  .hamburger-icon {
+    margin-left: auto;
+    margin-right: 0;
+    display: flex;
+    gap: 6px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .menu-links {
+    left: 0;
+    right: 0;
+    top: 70px;
+    width: 100vw;
+    height: calc(100vh - 70px);
+    border-radius: 0 0 1.2rem 1.2rem;
+    box-shadow: 0 6px 32px -12px rgba(60, 60, 60, 0.1);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 101;
+    overflow-y: auto;
+  }
+  .menu-links.open {
+    display: flex;
+  }
+  #profile {
+    display: block;
+  }
+  section {
+    margin: 0;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    box-sizing: border-box;
+  }
+}
+
+/* 600px and below: Mobile layout, smaller text, stack nav/footer/contact */
+@media screen and (max-width: 600px) {
+  /* Profile section */
+  #profile {
+    height: auto;
+    margin-bottom: 0;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .section__pic-container {
+    width: 90vw;
+    height: 46vw;
+    max-width: 220px;
+    max-height: 220px;
+    justify-content: center;
+  }
+  .section__text__p2 {
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 95vw;
+    margin: 0 auto 1rem auto;
+    padding: 0 8px;
+    word-break: break-word;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .skills-container,
+  .projects-gallery {
+    gap: 1rem;
+  }
+
+  /* Footer */
+  .footer-inner {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 1rem;
+  }
+  .footer-links {
+    gap: 1.1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-socials {
+    gap: 0.8rem;
+  }
+
+  /* Remove fixed heights for #contact and footer */
+  #contact, 
+  footer {
+    height: auto;
+  }
+
+  /* Contact section: stack cards */
+  .contact-card.contact-row {
+    gap: 1.2rem;
+    align-items: center;
+  }
+
+  section,
+  .section-inner,
+  .about-main,
+  .about-content,
+  .about-highlights,
+  .skills-container,
+  .projects-gallery,
+  .certification-list,
+  .footer-inner {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  .project-card,
+  .skill-category,
+  .cert-card,
+  .contact-card {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+/* in this file we have codes which helps the website to be responsive */
+/*this is mediaquaries.css file for my portfolio */
