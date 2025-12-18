@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "export",  // Required for GitHub Pages
+  basePath: process.env.NODE_ENV === "production" ? "/my_portfolio" : "", // Adjust for your repo name
   images: {
+    unoptimized: true, // Required for static export
     remotePatterns: [
       {
         protocol: "https",
