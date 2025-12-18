@@ -1,8 +1,0 @@
-All rights reserved.
-
-This code is provided for demonstration purposes only.
-No part of this codebase may be reused, copied, modified, or distributed without explicit permission from the author.
-
-Unauthorized use will be considered a violation of copyright.
-
-© 2025 Yagna Patel
