@@ -1,83 +1,36 @@
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-# 💼 Yagna Patel's - Portfolio Website
+## Getting Started
 
-Welcome to the source code of my personal portfolio website, designed and developed to showcase my technical skills, professional experiences, projects, and certifications in a modern, minimal, and responsive format.
-
-🌐 **Live Site:** [yagna3903.github.io/my_portfolio](https://yagna3903.github.io/my_portfolio/)
-
----
-
-## ✨ Features
-
-- ✅ Mobile-first responsive layout
-- 🌙 Light/Dark theme toggle
-- 💬 Typewriter animation in hero section
-- 🧠 About Me & Skills overview
-- 🧪 Project gallery with GitHub links
-- 🏅 Certifications section with badge previews
-- 📫 Contact section with email, LinkedIn, and GitHub
-- 🎨 Scroll-based reveal animations (AOS.js)
-- 🍃 Frosted-glass hamburger menu for tablets & mobile
-
----
-
-## 🛠️ Tech Stack
-
-- **Languages:** HTML5, CSS3, JavaScript (Vanilla)
-- **Styling:** Custom CSS, Media Queries
-- **UI Enhancements:** AOS (Animate On Scroll), Typewriter JS
-- **Design Touches:** Frosted Glass effect, Responsive Images
-- **Deployment:** GitHub Pages
-
----
-
-## 🚀 Getting Started
-
-To run the project locally:
+First, run the development server:
 
 ```bash
-git clone https://github.com/Yagna3903/my_portfolio.git
-cd my_portfolio
-# Then open index.html in your browser
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-No build tools or installations are required.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
----
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## 📬 Contact
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Feel free to connect with me:
+## Learn More
 
-- 📧 [yagna.pattel@gmail.com](mailto:yagna.pattel@gmail.com)
-- 💼 [LinkedIn](https://linkedin.com/in/yagna--patel)
-- 💻 [GitHub](https://github.com/Yagna3903)
+To learn more about Next.js, take a look at the following resources:
 
----
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 📦 Version
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-**Current Version:** `v1.0.0`
+## Deploy on Vercel
 
----
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## 📋 Changelog
-
-### v1.0.0
-- Initial release of personal portfolio website
-- Responsive design following mobile-first principles
-- Frosted glass effect added to mobile hamburger menu
-- Sections: About, Experience, Projects, Certifications, Contact
-- Integrated AOS.js for scroll animations
-- Typewriter effect in hero section
-- Live hosted on GitHub Pages
-
----
-
-## License
-
-This project is licensed under a custom "All Rights Reserved" license.  
-Please note that reuse, copying, or modification of this code without explicit permission is strictly prohibited.
-
-See [LICENSE.txt](./LICENSE.txt) for full terms.
-
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
