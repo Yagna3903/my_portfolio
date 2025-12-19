@@ -38,7 +38,7 @@ export function Navbar() {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                 scrolled
-                    ? "glass-card py-4"
+                    ? "bg-white/5 dark:bg-black/5 backdrop-blur-3xl backdrop-saturate-200 border-b border-white/20 dark:border-white/5 py-4"
                     : "bg-transparent py-6"
             )}
         >
@@ -115,7 +115,7 @@ export function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-background/95 backdrop-blur-xl border-t border-foreground/5 overflow-hidden"
+                        className="md:hidden bg-white/20 dark:bg-black/20 backdrop-blur-3xl backdrop-saturate-200 border-t border-white/20 dark:border-white/5 overflow-hidden"
                     >
                         <ul className="flex flex-col p-6 gap-4 items-center">
                             {navLinks.map((link) => (

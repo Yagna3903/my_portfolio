@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { SpotlightCard } from "@/components/SpotlightCard";
 
 const certs = [
     {
@@ -29,7 +30,7 @@ const certs = [
 
 export function Certification() {
     return (
-        <section id="certification" className="py-20 px-6 bg-secondary/5">
+        <section id="certification" className="py-20 px-6">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                     <p className="text-primary font-medium mb-2">My Achievements</p>
@@ -38,34 +39,34 @@ export function Certification() {
 
                 <div className="flex flex-wrap justify-center gap-12">
                     {certs.map((cert, index) => (
-                        <motion.a
+                        <a
                             key={index}
                             href={cert.link}
                             target="_blank"
                             rel="noreferrer"
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            whileHover={{
-                                scale: 1.05,
-                                rotate: [0, -2, 2, 0],
-                                transition: { duration: 0.3 }
-                            }}
-                            viewport={{ once: true }}
-                            className="glass-card p-6 rounded-3xl flex flex-col items-center gap-4 hover:shadow-2xl transition-all cursor-pointer bg-white dark:bg-black/40"
                         >
-                            <div className="relative w-40 h-40">
-                                <Image
-                                    src={cert.image}
-                                    alt={cert.title}
-                                    fill
-                                    className="object-contain"
-                                />
-                            </div>
-                            <div className="text-center">
-                                <h3 className="font-bold text-lg">{cert.title}</h3>
-                                <p className="text-sm text-foreground/60">{cert.issuer} • {cert.date}</p>
-                            </div>
-                        </motion.a>
+                            <SpotlightCard className="p-6 flex flex-col items-center gap-4 cursor-pointer bg-white dark:bg-black/40">
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    className="flex flex-col items-center gap-4"
+                                >
+                                    <div className="relative w-40 h-40">
+                                        <Image
+                                            src={cert.image}
+                                            alt={cert.title}
+                                            fill
+                                            className="object-contain"
+                                        />
+                                    </div>
+                                    <div className="text-center">
+                                        <h3 className="font-bold text-lg">{cert.title}</h3>
+                                        <p className="text-sm text-foreground/60">{cert.issuer} • {cert.date}</p>
+                                    </div>
+                                </motion.div>
+                            </SpotlightCard>
+                        </a>
                     ))}
                 </div>
             </div>

@@ -3,6 +3,7 @@ import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/Navbar";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${outfit.variable} ${inter.variable} antialiased bg-background text-foreground transition-colors duration-300`}
       >
         <ThemeProvider
@@ -37,6 +39,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <AnimatedBackground />
           <Navbar />
           {children}
         </ThemeProvider>

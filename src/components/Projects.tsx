@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiGithub } from "react-icons/fi";
+import { SpotlightCard } from "@/components/SpotlightCard";
 
 const projects = [
     {
@@ -58,65 +59,77 @@ export function Projects() {
         <section id="projects" className="py-20 px-6">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
-                    <p className="text-primary font-medium mb-2">Browse My Recent</p>
-                    <h2 className="text-4xl md:text-5xl font-bold font-heading">Projects</h2>
+                    <p className="text-xl text-primary font-medium tracking-wide mb-2">Featured Work</p>
+                    <h2 className="text-4xl md:text-5xl font-bold font-heading">Recent Projects</h2>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="flex flex-col gap-12">
                     {projects.map((project, index) => (
-                        <motion.div
+                        <SpotlightCard
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            whileHover={{ y: -10 }}
-                            className="glass-card rounded-3xl overflow-hidden flex flex-col"
+                            className="p-0 overflow-hidden"
                         >
-                            <div className="relative h-48 w-full bg-secondary/10">
-                                {project.image ? (
-                                    <Image
-                                        src={project.image}
-                                        alt={project.title}
-                                        fill
-                                        className="object-cover"
-                                        unoptimized={project.isPlaceholder}
-                                    />
-                                ) : (
-                                    <div className="flex items-center justify-center h-full text-foreground/20 font-bold text-xl">
-                                        Coming Soon
-                                    </div>
-                                )}
-                            </div>
-
-                            <div className="p-6 flex flex-col grow">
-                                <h3 className="text-xl font-bold mb-1">{project.title}</h3>
-                                <span className="text-xs font-medium text-primary mb-2 line-clamp-1">{project.role}</span>
-                                <p className="text-foreground/70 text-sm mb-4 line-clamp-3">
-                                    {project.desc}
-                                </p>
-
-                                <div className="flex flex-wrap gap-2 mb-6 mt-auto">
-                                    {project.tech.map((tag) => (
-                                        <span
-                                            key={tag}
-                                            className="text-xs px-2 py-1 rounded-md bg-foreground/5 text-foreground/80"
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                className="grid md:grid-cols-2 gap-6"
+                            >
+                                {/* Image Section */}
+                                <div className="relative h-64 md:h-full bg-secondary/10 min-h-[300px] border-b md:border-b-0 md:border-r border-foreground/5 group overflow-hidden">
+                                    {project.image ? (
+                                        <Image
+                                            src={project.image}
+                                            alt={project.title}
+                                            fill
+                                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                            unoptimized={project.isPlaceholder}
+                                        />
+                                    ) : (
+                                        <div className="flex items-center justify-center h-full text-foreground/20 font-bold text-xl">
+                                            Coming Soon
+                                        </div>
+                                    )}
+                                    {/* Overlay Gradient */}
+                                    <div className="absolute inset-0 bg-linear-to-t from-background/80 to-transparent md:bg-linear-to-r" />
                                 </div>
 
-                                <a
-                                    href={project.link}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="w-full py-2 rounded-xl bg-foreground text-background font-medium text-center flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
-                                >
-                                    <FiGithub /> GitHub
-                                </a>
-                            </div>
-                        </motion.div>
+                                {/* Content Section */}
+                                <div className="p-8 flex flex-col justify-center">
+                                    <div className="mb-4">
+                                        <span className="text-xs font-bold tracking-wider text-primary uppercase mb-2 block">{project.role}</span>
+                                        <h3 className="text-3xl font-bold mb-2">{project.title}</h3>
+                                    </div>
+
+                                    <p className="text-foreground/70 leading-relaxed mb-8 grow">
+                                        {project.desc}
+                                    </p>
+
+                                    <div className="space-y-6 mt-auto">
+                                        <div className="flex flex-wrap gap-2">
+                                            {project.tech.map((tag) => (
+                                                <span
+                                                    key={tag}
+                                                    className="px-3 py-1 text-xs font-medium rounded-full bg-secondary/10 text-foreground/80"
+                                                >
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="inline-flex items-center gap-2 text-foreground font-semibold hover:text-primary transition-colors group/link"
+                                        >
+                                            View Project <FiGithub className="group-hover/link:translate-x-1 transition-transform" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </SpotlightCard>
                     ))}
                 </div>
             </div>
