@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/Navbar";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
+import { AiTwin } from "@/components/AiTwin";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -41,7 +42,10 @@ export default function RootLayout({
         >
           <AnimatedBackground />
           <Navbar />
-          {children}
+          <main className="relative z-10 transition-all duration-300">
+            {children}
+          </main>
+          <AiTwin />
         </ThemeProvider>
       </body>
     </html>

@@ -42,14 +42,8 @@ export function Navbar() {
                     : "bg-transparent py-6"
             )}
         >
-            <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-                {/* Logo */}
-                <Link
-                    href="#"
-                    className="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-secondary hover:opacity-80 transition-opacity"
-                >
-                    Yagna Patel
-                </Link>
+            <div className="max-w-7xl mx-auto px-6 flex items-center justify-end">
+                {/* Logo Removed as per user request */}
 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center gap-8">
