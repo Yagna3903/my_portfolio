@@ -3,94 +3,135 @@
 import { motion } from "framer-motion";
 import { SpotlightCard } from "@/components/SpotlightCard";
 import {
-    SiAmazon,
-    SiTerraform,
-    SiAnsible,
-    SiDocker,
-    SiKubernetes,
-    SiVmware,
-    SiLinux,
-    SiNixos,
-    SiGithubactions,
-    SiJenkins,
-    SiGit,
-    SiPython,
-    SiReact,
-    SiNextdotjs,
-    SiTypescript,
-    SiPostgresql
+    SiAmazon, SiTerraform, SiDocker, SiKubernetes,
+    SiReact, SiTypescript, SiPython, SiPostgresql,
+    SiLinux, SiNodedotjs, SiNextdotjs, SiGit
 } from "react-icons/si";
+import { Fragment } from "react";
 
-const skills = [
-    { name: "AWS", icon: SiAmazon, color: "#FF9900", desc: "Cloud Foundation" },
-    { name: "Terraform", icon: SiTerraform, color: "#7B42BC", desc: "Infrastructure as Code" },
-    { name: "Ansible", icon: SiAnsible, color: "#EE0000", desc: "Config Management" },
-    { name: "Docker", icon: SiDocker, color: "#2496ED", desc: "Containerization" },
-    { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5", desc: "Orchestration" },
-    { name: "vSphere", icon: SiVmware, color: "#6DA55F", desc: "Virtualization" },
-    { name: "Linux", icon: SiLinux, color: "#FCC624", desc: "Systems Engineering" },
-    { name: "NixOS", icon: SiNixos, color: "#5277C3", desc: "Reproducible Systems" },
-    { name: "GitHub Actions", icon: SiGithubactions, color: "#2088FF", desc: "CI/CD Pipelines" },
-    { name: "Jenkins", icon: SiJenkins, color: "#D24939", desc: "Automation Server" },
-    { name: "Git", icon: SiGit, color: "#F05032", desc: "Version Control" },
-    { name: "Python", icon: SiPython, color: "#3776AB", desc: "Automation & AI" },
-    { name: "React", icon: SiReact, color: "#61DAFB", desc: "Frontend UI" },
-    { name: "Next.js", icon: SiNextdotjs, color: "#000000", desc: "Full Stack Framework" }, // Next.js color logic handled in rendering
-    { name: "TypeScript", icon: SiTypescript, color: "#3178C6", desc: "Type Safety" },
-    { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1", desc: "Relational Data" },
+const eliteSkills = [
+    { name: "Python", icon: SiPython, color: "#3776AB" },
+    { name: "AWS", icon: SiAmazon, color: "#FF9900" },
+    { name: "React", icon: SiReact, color: "#61DAFB" },
+    { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5" },
+    { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+    { name: "Terraform", icon: SiTerraform, color: "#7B42BC" },
+    { name: "Docker", icon: SiDocker, color: "#2496ED" },
+    { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+    { name: "Linux", icon: SiLinux, color: "#FCC624" },
+    { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+    { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
+    { name: "Git", icon: SiGit, color: "#F05032" },
 ];
+
+function SkillCard({ skill }: { skill: any }) {
+    return (
+        <SpotlightCard
+            // THEME MATCHING:
+            // Sizing: w-[240px] (Mobile) / w-[280px] (Desktop) - Standard, consistent size.
+            // Styles: Copied EXACTLY from Experience.tsx (border-black/5, dark:border-white/5, etc.)
+            className="w-[200px] md:w-[280px] h-[90px] md:h-[110px] shrink-0 flex-none p-4 md:p-6 flex items-center gap-4 md:gap-5 text-left group border border-black/5 dark:border-white/5 bg-white/50 dark:bg-white/5 backdrop-blur-md shadow-sm hover:border-primary/20 transition-all rounded-xl hover:shadow-md"
+            style={{
+                // @ts-ignore
+                "--hover-color": skill.color
+            }}
+        >
+            {/* Subtle Hover Glow to match "Little Colourful" request without breaking theme */}
+            <div
+                className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                style={{
+                    boxShadow: `inset 0 0 20px ${skill.color}15`,
+                    borderColor: `${skill.color}50`
+                }}
+            />
+
+            {/* Icon Box */}
+            <div className="relative z-10 shrink-0 p-2 rounded-lg bg-secondary/5 group-hover:bg-transparent transition-colors">
+                <skill.icon
+                    className="w-8 h-8 md:w-10 md:h-10 transition-transform duration-300 group-hover:scale-110"
+                    style={{ color: skill.color }} // Always show brand color for "Little Colourful"
+                />
+            </div>
+
+            <div className="flex-1 min-w-0 flex flex-col justify-center">
+                {/* Name - Theme Font */}
+                <h3 className="font-bold text-base md:text-xl tracking-tight text-foreground group-hover:text-primary transition-colors duration-300 truncate">
+                    {skill.name}
+                </h3>
+            </div>
+        </SpotlightCard>
+    );
+}
+
+function Marquee({ items, speed = 100 }: { items: any[], speed?: number }) {
+    return (
+        <div className="flex overflow-hidden relative w-full py-20 md:py-32">
+            {/* Gradients - Standard Size */}
+            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-linear-to-r from-(--background) to-transparent z-20 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-linear-to-l from-(--background) to-transparent z-20 pointer-events-none" />
+
+            <div className="flex shrink-0 min-w-full">
+                <motion.div
+                    initial={{ x: 0 }}
+                    animate={{ x: "-100%" }}
+                    transition={{
+                        duration: speed * 2,
+                        ease: "linear",
+                        repeat: Infinity,
+                    }}
+                    className="flex shrink-0 items-center"
+                >
+                    {/* PHYSICAL SEPARATION STRATEGY: */}
+                    {/* We map each item AND a transparent spacer div. */}
+                    {/* This guarantees separation that flex-gap sometimes ignores in marquees. */}
+                    {items.map((skill, i) => (
+                        <Fragment key={`items1-${i}`}>
+                            <SkillCard skill={skill} />
+                            {/* THE SPACER: 32px Mobile / 96px Desktop */}
+                            <div className="shrink-0 w-8 md:w-32" />
+                        </Fragment>
+                    ))}
+                </motion.div>
+
+                <motion.div
+                    initial={{ x: 0 }}
+                    animate={{ x: "-100%" }}
+                    transition={{
+                        duration: speed * 2,
+                        ease: "linear",
+                        repeat: Infinity,
+                    }}
+                    className="flex shrink-0 items-center"
+                >
+                    {items.map((skill, i) => (
+                        <Fragment key={`items2-${i}`}>
+                            <SkillCard skill={skill} />
+                            {/* THE SPACER: 32px Mobile / 96px Desktop */}
+                            <div className="shrink-0 w-8 md:w-32" />
+                        </Fragment>
+                    ))}
+                </motion.div>
+            </div>
+        </div>
+    );
+}
 
 export function Skills() {
     return (
-        <section id="skills" className="py-32 px-6 relative overflow-hidden">
-            {/* Background glow for ambience */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[128px] pointer-events-none" />
+        <section id="skills" className="py-20 md:py-32 relative overflow-hidden px-6">
+            {/* Ambient Glow similar to Experience */}
+            <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[128px] pointer-events-none opacity-60" />
 
-            <div className="max-w-7xl mx-auto relative z-10">
-                <div className="text-center mb-20">
-                    <p className="text-xl text-primary font-medium tracking-wide mb-3">My Arsenal</p>
-                    <h2 className="text-4xl md:text-5xl font-bold font-heading">Technical Toolkit</h2>
+            <div className="relative z-10 w-full max-w-6xl mx-auto">
+                {/* HEADER - EXACT COPY of Experience.tsx Typography */}
+                <div className="text-center mb-16 md:mb-20">
+                    <p className="text-xl text-primary font-medium tracking-wide mb-3">Expertise</p>
+                    <h2 className="text-4xl md:text-5xl font-bold font-heading">Core Stack</h2>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    {skills.map((skill, index) => (
-                        <SpotlightCard
-                            key={index}
-                            className="p-6 h-full flex flex-col items-center justify-center gap-4 text-center group border border-white/5 bg-white/5 backdrop-blur-sm hover:border-white/10 transition-all duration-300"
-                            style={{
-                                // @ts-ignore
-                                "--hover-color": skill.color
-                            }}
-                        >
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.05 }}
-                                className="flex flex-col items-center gap-4 relative z-10"
-                            >
-                                <div
-                                    className="p-4 rounded-2xl bg-white/5 text-foreground group-hover:bg-white/10 transition-colors duration-300 relative"
-                                >
-                                    {/* Glow effect on hover */}
-                                    <div
-                                        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-md"
-                                        style={{ backgroundColor: skill.color }}
-                                    />
-                                    <skill.icon
-                                        size={40}
-                                        className="relative z-10 transition-colors duration-300 group-hover:text-(--hover-color)"
-                                        style={{ color: 'inherit' }}
-                                    />
-                                </div>
-
-                                <div>
-                                    <h3 className="text-lg font-bold mb-1">{skill.name}</h3>
-                                    <p className="text-xs text-foreground/50 font-medium uppercase tracking-wider">{skill.desc}</p>
-                                </div>
-                            </motion.div>
-                        </SpotlightCard>
-                    ))}
+                {/* Marquee Container with negative margins for full bleed feel on mobile if desired, or keep contained */}
+                <div className="w-full -mx-6 md:mx-0">
+                    <Marquee items={eliteSkills} speed={60} />
                 </div>
             </div>
         </section>

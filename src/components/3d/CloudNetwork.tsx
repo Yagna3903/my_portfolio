@@ -15,11 +15,11 @@ export function CloudNetwork({ theme }: { theme: string | undefined }) {
     const isDark = theme === 'dark' || !theme; // Default to dark if undefined
 
     const colors = {
-        core: isDark ? "#ffffff" : "#475569", // White vs Slate 600
-        coreEmissive: isDark ? "#ffffff" : "#475569",
-        shell: isDark ? "#a5b4fc" : "#94a3b8", // Indigo vs Slate 400
-        ring: isDark ? "#ffffff" : "#64748b", // White vs Slate 500
-        packet1: isDark ? "#ec4899" : "#db2777", // Pink 500 vs Pink 600 (darker)
+        core: isDark ? "#ffffff" : "#1e293b", // White vs Slate 800 (Much darker for contrast)
+        coreEmissive: isDark ? "#ffffff" : "#1e293b",
+        shell: isDark ? "#a5b4fc" : "#64748b", // Indigo vs Slate 500
+        ring: isDark ? "#ffffff" : "#334155", // White vs Slate 700
+        packet1: isDark ? "#ec4899" : "#db2777", // Pink 500 vs Pink 600
         packet2: isDark ? "#06b6d4" : "#2563eb", // Cyan vs Blue 600
     };
 

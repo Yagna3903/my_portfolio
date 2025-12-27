@@ -55,7 +55,7 @@ export function About() {
                                 <div className="space-y-4">
                                     <div>
                                         <p className="font-bold text-lg">Sheridan College</p>
-                                        <p className="text-sm text-foreground/60 italic">2023 - 2026 (Expected)</p>
+                                        <p className="text-sm text-foreground/60 italic">2022 - 2025</p>
                                     </div>
                                     <div>
                                         <p className="text-primary font-medium">Computer Systems Technology</p>
