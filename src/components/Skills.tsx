@@ -5,19 +5,31 @@ import { SpotlightCard } from "@/components/SpotlightCard";
 import {
     SiAmazon, SiTerraform, SiDocker, SiKubernetes,
     SiReact, SiTypescript, SiPython, SiPostgresql,
-    SiLinux, SiNodedotjs, SiNextdotjs, SiGit
+    SiLinux, SiNodedotjs, SiNextdotjs, SiGit,
+    SiSharp, SiCplusplus, SiJira, SiApachehadoop,
+    SiApachehive, SiApachespark, SiAnsible, SiJenkins
 } from "react-icons/si";
+import { FaJava } from "react-icons/fa";
 import { Fragment } from "react";
 
 const eliteSkills = [
     { name: "Python", icon: SiPython, color: "#3776AB" },
+    { name: "Java", icon: FaJava, color: "#007396" },
+    { name: "C++", icon: SiCplusplus, color: "#00599C" },
+    { name: "C#", icon: SiSharp, color: "#512BD4" },
     { name: "AWS", icon: SiAmazon, color: "#FF9900" },
+    { name: "Ansible", icon: SiAnsible, color: "#EE0000" },
+    { name: "Jenkins", icon: SiJenkins, color: "#D24939" },
     { name: "React", icon: SiReact, color: "#61DAFB" },
     { name: "Kubernetes", icon: SiKubernetes, color: "#326CE5" },
     { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
     { name: "Terraform", icon: SiTerraform, color: "#7B42BC" },
     { name: "Docker", icon: SiDocker, color: "#2496ED" },
     { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+    { name: "Hadoop", icon: SiApachehadoop, color: "#66CCFF" },
+    { name: "Spark", icon: SiApachespark, color: "#E25A1C" },
+    { name: "Hive", icon: SiApachehive, color: "#FDEE21" },
+    { name: "Jira", icon: SiJira, color: "#0052CC" },
     { name: "Linux", icon: SiLinux, color: "#FCC624" },
     { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
     { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
@@ -28,9 +40,9 @@ function SkillCard({ skill }: { skill: any }) {
     return (
         <SpotlightCard
             // THEME MATCHING:
-            // Sizing: w-[240px] (Mobile) / w-[280px] (Desktop) - Standard, consistent size.
-            // Styles: Copied EXACTLY from Experience.tsx (border-black/5, dark:border-white/5, etc.)
-            className="w-[200px] md:w-[280px] h-[90px] md:h-[110px] shrink-0 flex-none p-4 md:p-6 flex items-center gap-4 md:gap-5 text-left group border border-black/5 dark:border-white/5 bg-white/50 dark:bg-white/5 backdrop-blur-md shadow-sm hover:border-primary/20 transition-all rounded-xl hover:shadow-md"
+            // Sizing: w-auto (Variable). h-[90px] (Desktop).
+            // Layout: Vertical (flex-col) + Centered + HIGH CONTRAST BORDER.
+            className="w-auto h-[80px] md:h-[90px] shrink-0 flex-none px-6 md:px-8 text-center group border border-black/20 dark:border-white/10 bg-gray-50 dark:bg-white/5 backdrop-blur-md shadow-sm hover:border-primary/20 transition-all rounded-xl hover:shadow-md"
             style={{
                 // @ts-ignore
                 "--hover-color": skill.color
@@ -45,19 +57,21 @@ function SkillCard({ skill }: { skill: any }) {
                 }}
             />
 
-            {/* Icon Box */}
-            <div className="relative z-10 shrink-0 p-2 rounded-lg bg-secondary/5 group-hover:bg-transparent transition-colors">
+            {/* Content Wrapper for Proper Centering */}
+            <div className="w-full h-full flex flex-col items-center justify-center gap-2">
+                {/* Icon - Standalone, Centered, Smaller */}
                 <skill.icon
-                    className="w-8 h-8 md:w-10 md:h-10 transition-transform duration-300 group-hover:scale-110"
+                    className="w-6 h-6 md:w-8 md:h-8 shrink-0 transition-transform duration-300 group-hover:scale-110 relative z-10"
                     style={{ color: skill.color }} // Always show brand color for "Little Colourful"
                 />
-            </div>
 
-            <div className="flex-1 min-w-0 flex flex-col justify-center">
-                {/* Name - Theme Font */}
-                <h3 className="font-bold text-base md:text-xl tracking-tight text-foreground group-hover:text-primary transition-colors duration-300 truncate">
-                    {skill.name}
-                </h3>
+                {/* Removing flex-1 to pack content in center */}
+                <div className="flex flex-col justify-center min-w-0">
+                    {/* Name - Theme Font */}
+                    <h3 className="font-bold text-xs md:text-sm tracking-tight text-foreground group-hover:text-primary transition-colors duration-300 truncate">
+                        {skill.name}
+                    </h3>
+                </div>
             </div>
         </SpotlightCard>
     );
@@ -87,8 +101,8 @@ function Marquee({ items, speed = 100 }: { items: any[], speed?: number }) {
                     {items.map((skill, i) => (
                         <Fragment key={`items1-${i}`}>
                             <SkillCard skill={skill} />
-                            {/* THE SPACER: 32px Mobile / 96px Desktop */}
-                            <div className="shrink-0 w-8 md:w-32" />
+                            {/* THE SPACER: 8px Mobile / 32px Desktop */}
+                            <div className="shrink-0 w-2 md:w-8" />
                         </Fragment>
                     ))}
                 </motion.div>
@@ -106,8 +120,8 @@ function Marquee({ items, speed = 100 }: { items: any[], speed?: number }) {
                     {items.map((skill, i) => (
                         <Fragment key={`items2-${i}`}>
                             <SkillCard skill={skill} />
-                            {/* THE SPACER: 32px Mobile / 96px Desktop */}
-                            <div className="shrink-0 w-8 md:w-32" />
+                            {/* THE SPACER: 8px Mobile / 32px Desktop */}
+                            <div className="shrink-0 w-2 md:w-8" />
                         </Fragment>
                     ))}
                 </motion.div>
