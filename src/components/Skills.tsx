@@ -118,21 +118,21 @@ function Marquee({ items, speed = 100 }: { items: any[], speed?: number }) {
 
 export function Skills() {
     return (
-        <section id="skills" className="py-20 md:py-32 relative overflow-hidden px-6">
+        <section id="skills" className="py-20 md:py-32 relative overflow-hidden">
             {/* Ambient Glow similar to Experience */}
             <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[128px] pointer-events-none opacity-60" />
 
-            <div className="relative z-10 w-full max-w-6xl mx-auto">
+            <div className="relative z-10 w-full max-w-6xl mx-auto px-6">
                 {/* HEADER - EXACT COPY of Experience.tsx Typography */}
                 <div className="text-center mb-16 md:mb-20">
                     <p className="text-xl text-primary font-medium tracking-wide mb-3">Expertise</p>
                     <h2 className="text-4xl md:text-5xl font-bold font-heading">Core Stack</h2>
                 </div>
+            </div>
 
-                {/* Marquee Container with negative margins for full bleed feel on mobile if desired, or keep contained */}
-                <div className="w-full -mx-6 md:mx-0">
-                    <Marquee items={eliteSkills} speed={60} />
-                </div>
+            {/* Marquee Container - FULL WIDTH, OUTSIDE CONTAINER */}
+            <div className="relative z-10 w-full">
+                <Marquee items={eliteSkills} speed={60} />
             </div>
         </section>
     );
