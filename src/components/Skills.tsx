@@ -43,8 +43,8 @@ function SkillCard({ skill }: { skill: any }) {
             // Sizing: w-auto (Variable). h-[90px] (Desktop).
             // Layout: Vertical (flex-col) + Centered.
             // Colors: Light(White/50 + Neutral-400), Dark(Neutral-900 - Solid Dark Plate).
-            // Hover: Dynamic Brand Color Glow.
-            className="w-auto h-[80px] md:h-[90px] shrink-0 flex-none px-6 md:px-8 text-center group border border-neutral-400 dark:border-neutral-800 bg-white/50 dark:bg-neutral-900 shadow-sm transition-all duration-300 rounded-xl hover:-translate-y-1"
+            // Hover: Dynamic Brand Color Glow + Lively Tint.
+            className="w-auto h-[80px] md:h-[90px] shrink-0 flex-none px-6 md:px-8 text-center group border border-neutral-400 dark:border-neutral-800 bg-white/50 dark:bg-neutral-900 shadow-sm transition-all duration-300 rounded-xl hover:-translate-y-1 overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             whileHover={{
@@ -53,14 +53,15 @@ function SkillCard({ skill }: { skill: any }) {
             }}
             style={{
                 // @ts-ignore
-                "--skill-color": skill.color
+                "--skill-color": skill.color,
+                "--spotlight-color": skill.color
             }}
         >
-            {/* Content Wrapper for Proper Centering */}
-            <div className="w-full h-full flex flex-col items-center justify-center gap-2">
+            {/* Content Wrapper for Proper Centering & Z-Index */}
+            <div className="w-full h-full flex flex-col items-center justify-center gap-2 relative z-10">
                 {/* Icon - Standalone, Centered, Smaller */}
                 <skill.icon
-                    className="w-6 h-6 md:w-8 md:h-8 shrink-0 transition-transform duration-300 group-hover:scale-110 relative z-10"
+                    className="w-6 h-6 md:w-8 md:h-8 shrink-0 transition-transform duration-300 group-hover:scale-110"
                     style={{ color: skill.color }} // Always show brand color for "Little Colourful"
                 />
 
