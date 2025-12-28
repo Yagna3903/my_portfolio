@@ -5,6 +5,8 @@ import Image from "next/image";
 import { SpotlightCard } from "@/components/SpotlightCard";
 import { cn } from "@/lib/utils";
 
+import githubBadge from "@/assets/github-foundations.png";
+
 const certs = [
     {
         title: "AWS Cloud Practitioner",
@@ -25,7 +27,7 @@ const certs = [
         issuer: "GitHub",
         date: "Jun 2025",
         link: "https://www.credly.com/badges/e89a53f3-a99d-41f8-8e3c-7fce246e7f29/public_url",
-        image: "/assets/github-foundations.png",
+        image: githubBadge,
     },
 ];
 
