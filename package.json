@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "next build && gh-pages -d out"
+    "deploy": "next build && gh-pages -d out -t"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",
