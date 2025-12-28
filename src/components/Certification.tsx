@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { SpotlightCard } from "@/components/SpotlightCard";
+import { cn } from "@/lib/utils";
 
 const certs = [
     {
@@ -37,32 +38,37 @@ export function Certification() {
                     <h2 className="text-4xl md:text-5xl font-bold font-heading">Certifications</h2>
                 </div>
 
-                <div className="flex flex-wrap justify-center gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {certs.map((cert, index) => (
                         <a
                             key={index}
                             href={cert.link}
                             target="_blank"
                             rel="noreferrer"
+                            className="block h-full"
                         >
-                            <SpotlightCard className="p-6 flex flex-col items-center gap-4 cursor-pointer rounded-xl">
+                            <SpotlightCard className="h-full p-8 flex flex-col items-center gap-4 cursor-pointer rounded-xl transition-all hover:-translate-y-2">
                                 <motion.div
                                     initial={{ opacity: 0, scale: 0.8 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     viewport={{ once: true }}
-                                    className="flex flex-col items-center gap-4"
+                                    className="flex flex-col items-center gap-4 w-full h-full justify-between"
                                 >
-                                    <div className="relative w-40 h-40">
+                                    <div className={cn(
+                                        "relative w-32 h-32 md:w-40 md:h-40 flex items-center justify-center",
+                                        cert.issuer === "Oracle" ? "scale-200" : ""
+                                    )}>
                                         <Image
                                             src={cert.image}
                                             alt={cert.title}
                                             fill
-                                            className="object-contain"
+                                            className="object-contain drop-shadow-xl"
                                         />
                                     </div>
-                                    <div className="text-center">
-                                        <h3 className="font-bold text-lg">{cert.title}</h3>
-                                        <p className="text-sm text-foreground/60">{cert.issuer} • {cert.date}</p>
+                                    <div className="text-center mt-auto">
+                                        <h3 className="font-bold text-xl mb-2">{cert.title}</h3>
+                                        <p className="text-sm font-medium text-primary">{cert.issuer}</p>
+                                        <p className="text-xs text-foreground/50">{cert.date}</p>
                                     </div>
                                 </motion.div>
                             </SpotlightCard>
