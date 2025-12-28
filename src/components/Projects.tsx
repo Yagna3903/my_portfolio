@@ -91,8 +91,7 @@ export function Projects() {
                                             Coming Soon
                                         </div>
                                     )}
-                                    {/* Overlay Gradient */}
-                                    <div className="absolute inset-0 bg-linear-to-t from-background/80 to-transparent md:bg-linear-to-r" />
+
                                 </div>
 
                                 {/* Content Section */}
