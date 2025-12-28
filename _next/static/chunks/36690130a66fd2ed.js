@@ -1,1 +1,0 @@
-(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,53953,o=>{o.v("/my_portfolio/_next/static/media/profile.ffd5fd9f.jpg")},25456,o=>{o.v("/my_portfolio/_next/static/media/github-foundations.7b0ef3e9.png")}]);
