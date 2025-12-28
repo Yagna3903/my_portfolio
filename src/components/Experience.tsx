@@ -98,7 +98,7 @@ export function Experience() {
 
                                 {/* Content Card */}
                                 <div className="w-full md:w-[calc(50%-2.5rem)]">
-                                    <SpotlightCard className="p-6 md:p-8 relative group border border-black/5 dark:border-white/5 bg-white/50 dark:bg-white/5 backdrop-blur-md shadow-sm hover:border-primary/20 transition-all">
+                                    <SpotlightCard className="p-6 md:p-8 relative group hover:border-primary/20 transition-all rounded-xl">
                                         <div className="flex flex-col gap-4">
                                             {/* Header */}
                                             <div className="flex flex-col gap-1">

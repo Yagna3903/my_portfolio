@@ -15,7 +15,7 @@ export function Contact() {
 
                 <div className="flex flex-col md:flex-row justify-center gap-8">
                     <a href="mailto:yagna.pattel@gmail.com">
-                        <SpotlightCard className="px-8 py-6 flex items-center gap-4">
+                        <SpotlightCard className="px-8 py-6 flex items-center gap-4 rounded-xl transition-transform hover:-translate-y-1">
                             <div className="p-3 bg-foreground text-background rounded-full">
                                 <FiMail size={24} />
                             </div>
@@ -24,7 +24,7 @@ export function Contact() {
                     </a>
 
                     <a href="https://www.linkedin.com/in/yagna--patel" target="_blank" rel="noreferrer">
-                        <SpotlightCard className="px-8 py-6 flex items-center gap-4">
+                        <SpotlightCard className="px-8 py-6 flex items-center gap-4 rounded-xl transition-transform hover:-translate-y-1">
                             <div className="p-3 bg-foreground text-background rounded-full">
                                 <FiLinkedin size={24} />
                             </div>
@@ -33,7 +33,7 @@ export function Contact() {
                     </a>
 
                     <a href="https://github.com/Yagna3903" target="_blank" rel="noreferrer">
-                        <SpotlightCard className="px-8 py-6 flex items-center gap-4">
+                        <SpotlightCard className="px-8 py-6 flex items-center gap-4 rounded-xl transition-transform hover:-translate-y-1">
                             <div className="p-3 bg-foreground text-background rounded-full">
                                 <FiGithub size={24} />
                             </div>

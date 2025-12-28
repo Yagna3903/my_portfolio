@@ -1,8 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export function AnimatedBackground() {
+    const { resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) return null;
+
+    // Only render orbs in dark mode
+    if (resolvedTheme !== "dark") return null;
+
     return (
         <div className="fixed inset-0 -z-50 overflow-hidden bg-background">
             {/* Orb 1 */}

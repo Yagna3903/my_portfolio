@@ -67,7 +67,7 @@ export function Projects() {
                     {projects.map((project, index) => (
                         <SpotlightCard
                             key={index}
-                            className="p-0 overflow-hidden"
+                            className="p-0 overflow-hidden rounded-xl"
                         >
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}

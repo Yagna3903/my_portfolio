@@ -7,7 +7,7 @@ import { Environment, OrbitControls } from "@react-three/drei";
 
 export function Scene({ theme }: { theme: string | undefined }) {
     return (
-        <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 -z-10 hidden md:block">
             <Canvas camera={{ position: [0, 0, 20], fov: 45 }} dpr={[1, 2]}>
                 <Suspense fallback={null}>
                     {/* Fog for depth */}

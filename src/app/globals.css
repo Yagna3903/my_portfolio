@@ -12,6 +12,8 @@
   --color-accent: var(--accent);
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   /* Light Mode */
   --background: #fafafa;

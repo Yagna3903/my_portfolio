@@ -16,7 +16,7 @@ export function About() {
                 <div className="grid md:grid-cols-3 gap-8">
                     {/* Bio Column - Spans 2 columns */}
                     <div className="md:col-span-2">
-                        <SpotlightCard className="p-8 h-full flex flex-col justify-center">
+                        <SpotlightCard className="p-8 h-full flex flex-col justify-center rounded-xl">
                             <motion.div
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
@@ -39,7 +39,7 @@ export function About() {
 
                     {/* Education Column */}
                     <div className="md:col-span-1">
-                        <SpotlightCard className="p-8 h-full flex flex-col justify-center bg-secondary/5 border-primary/20">
+                        <SpotlightCard className="p-8 h-full flex flex-col justify-center bg-secondary/5 border-primary/20 rounded-xl">
                             <motion.div
                                 initial={{ opacity: 0, x: 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}

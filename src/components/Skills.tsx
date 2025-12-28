@@ -44,7 +44,7 @@ function SkillCard({ skill }: { skill: any }) {
             // Layout: Vertical (flex-col) + Centered.
             // Colors: Light(White/50 + Neutral-400), Dark(Neutral-900 - Solid Dark Plate).
             // Hover: Dynamic Brand Color Glow + Lively Tint.
-            className="w-auto h-[80px] md:h-[90px] shrink-0 flex-none px-6 md:px-8 text-center group border border-neutral-400 dark:border-neutral-800 bg-white/50 dark:bg-neutral-900 shadow-sm transition-all duration-300 rounded-xl hover:-translate-y-1 overflow-hidden"
+            className="w-auto h-[80px] md:h-[90px] shrink-0 flex-none px-6 md:px-8 text-center group transition-all duration-300 rounded-xl hover:-translate-y-1 overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             whileHover={{

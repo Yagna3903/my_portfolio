@@ -45,7 +45,7 @@ export function Certification() {
                             target="_blank"
                             rel="noreferrer"
                         >
-                            <SpotlightCard className="p-6 flex flex-col items-center gap-4 cursor-pointer bg-white dark:bg-black/40">
+                            <SpotlightCard className="p-6 flex flex-col items-center gap-4 cursor-pointer rounded-xl">
                                 <motion.div
                                     initial={{ opacity: 0, scale: 0.8 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
