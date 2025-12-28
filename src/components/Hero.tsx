@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import profilePic from "@/assets/profile.jpg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import { FiDownload, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
@@ -146,7 +147,7 @@ export function Hero() {
                             <div className="absolute inset-0 rounded-full bg-linear-to-tr from-primary to-secondary blur-2xl opacity-50 animate-pulse group-hover:blur-3xl transition-all duration-500" />
                             <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-background shadow-2xl z-10">
                                 <Image
-                                    src="/assets/profile.jpg"
+                                    src={profilePic}
                                     alt="Yagna Patel"
                                     fill
                                     className="object-cover transform transition-transform duration-700 group-hover:scale-110"
