@@ -5,6 +5,9 @@ import Image from "next/image";
 import { FiGithub } from "react-icons/fi";
 import { SpotlightCard } from "@/components/SpotlightCard";
 
+import project1Img from "@/assets/project1.webp";
+import project2Img from "@/assets/project 2.png";
+
 const projects = [
     {
         title: "Coming Soon",
@@ -41,7 +44,7 @@ const projects = [
         desc: "Developed a full-stack AI MVP in 36 hours for BearHacks. Focused on innovative solutions and rapid prototyping.",
         tech: ["Python", "API Keys", "Supabase", "ReactJS"],
         link: "https://github.com/Yagna3903/Hackathon-Bearhacks.git",
-        image: "/assets/project1.webp",
+        image: project1Img,
     },
     {
         title: "Highlander Simulator",
@@ -50,7 +53,7 @@ const projects = [
         desc: "Created a simulation tool to model and analyze scenarios for process optimization. Emphasized clean code and actionable insights.",
         tech: ["C#", ".Net", "Figma", "MySQL"],
         link: "https://github.com/Yagna3903/Highlander-Simulator",
-        image: "/assets/project 2.png",
+        image: project2Img,
     },
 ];
 
