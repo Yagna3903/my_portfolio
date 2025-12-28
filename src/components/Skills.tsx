@@ -41,8 +41,8 @@ function SkillCard({ skill }: { skill: any }) {
         <SpotlightCard
             // THEME MATCHING:
             // Sizing: w-auto (Variable). h-[90px] (Desktop).
-            // Layout: Vertical (flex-col) + Centered + HIGH CONTRAST BORDER.
-            className="w-auto h-[80px] md:h-[90px] shrink-0 flex-none px-6 md:px-8 text-center group border border-black/20 dark:border-white/10 bg-gray-50 dark:bg-white/5 backdrop-blur-md shadow-sm hover:border-primary/20 transition-all rounded-xl hover:shadow-md"
+            // Layout: Vertical (flex-col) + Centered + ULTRA HIGH CONTRAST BORDER (Light Mode).
+            className="w-auto h-[80px] md:h-[90px] shrink-0 flex-none px-6 md:px-8 text-center group border border-neutral-400 dark:border-white/10 bg-gray-50 dark:bg-white/5 backdrop-blur-md shadow-sm hover:border-primary/20 transition-all rounded-xl hover:shadow-md"
             style={{
                 // @ts-ignore
                 "--hover-color": skill.color
