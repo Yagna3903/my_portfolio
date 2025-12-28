@@ -41,22 +41,21 @@ function SkillCard({ skill }: { skill: any }) {
         <SpotlightCard
             // THEME MATCHING:
             // Sizing: w-auto (Variable). h-[90px] (Desktop).
-            // Layout: Vertical (flex-col) + Centered + ULTRA HIGH CONTRAST BORDER (Light Mode).
-            className="w-auto h-[80px] md:h-[90px] shrink-0 flex-none px-6 md:px-8 text-center group border border-neutral-400 dark:border-white/10 bg-gray-50 dark:bg-white/5 backdrop-blur-md shadow-sm hover:border-primary/20 transition-all rounded-xl hover:shadow-md"
+            // Layout: Vertical (flex-col) + Centered.
+            // Colors: Light(White/50 + Neutral-400), Dark(Neutral-900 - Solid Dark Plate).
+            // Hover: Dynamic Brand Color Glow.
+            className="w-auto h-[80px] md:h-[90px] shrink-0 flex-none px-6 md:px-8 text-center group border border-neutral-400 dark:border-neutral-800 bg-white/50 dark:bg-neutral-900 shadow-sm transition-all duration-300 rounded-xl hover:-translate-y-1"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            whileHover={{
+                borderColor: skill.color,
+                boxShadow: `0 10px 30px -10px ${skill.color}50`
+            }}
             style={{
                 // @ts-ignore
-                "--hover-color": skill.color
+                "--skill-color": skill.color
             }}
         >
-            {/* Subtle Hover Glow to match "Little Colourful" request without breaking theme */}
-            <div
-                className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                style={{
-                    boxShadow: `inset 0 0 20px ${skill.color}15`,
-                    borderColor: `${skill.color}50`
-                }}
-            />
-
             {/* Content Wrapper for Proper Centering */}
             <div className="w-full h-full flex flex-col items-center justify-center gap-2">
                 {/* Icon - Standalone, Centered, Smaller */}
@@ -68,7 +67,7 @@ function SkillCard({ skill }: { skill: any }) {
                 {/* Removing flex-1 to pack content in center */}
                 <div className="flex flex-col justify-center min-w-0">
                     {/* Name - Theme Font */}
-                    <h3 className="font-bold text-xs md:text-sm tracking-tight text-foreground group-hover:text-primary transition-colors duration-300 truncate">
+                    <h3 className="font-bold text-xs md:text-sm tracking-tight text-foreground group-hover:text-[var(--skill-color)] transition-colors duration-300 truncate">
                         {skill.name}
                     </h3>
                 </div>
