@@ -92,7 +92,7 @@ function SkillCard({ skill }: { skill: any }) {
 
 function Marquee({ items, speed = 100 }: { items: any[], speed?: number }) {
     return (
-        <div className="flex overflow-hidden relative w-full py-20 md:py-32">
+        <div className="flex overflow-hidden relative w-full pb-20 md:pb-32 pt-10">
             {/* Gradients - Standard Size */}
             <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-linear-to-r from-(--background) to-transparent z-20 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-linear-to-l from-(--background) to-transparent z-20 pointer-events-none" />
@@ -145,7 +145,7 @@ function Marquee({ items, speed = 100 }: { items: any[], speed?: number }) {
 
 export function Skills() {
     return (
-        <section id="skills" className="py-20 md:py-32 relative overflow-hidden">
+        <section id="skills" className="pt-20 md:pt-32 pb-10 md:pb-16 relative overflow-hidden">
             {/* Ambient Glow similar to Experience */}
             <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[128px] pointer-events-none opacity-60" />
 
