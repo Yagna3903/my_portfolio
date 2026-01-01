@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SpotlightCard } from "@/components/SpotlightCard";
+import { useTheme } from "next-themes";
 import {
     SiAmazon, SiTerraform, SiDocker, SiKubernetes,
     SiReact, SiTypescript, SiPython, SiPostgresql,
@@ -10,7 +11,7 @@ import {
     SiApachehive, SiApachespark, SiAnsible, SiJenkins
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 const eliteSkills = [
     { name: "Python", icon: SiPython, color: "#3776AB" },
@@ -37,6 +38,18 @@ const eliteSkills = [
 ];
 
 function SkillCard({ skill }: { skill: any }) {
+    const { resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    // Dynamic color logic for Next.js visibility
+    const effectiveColor = (mounted && skill.name === "Next.js" && resolvedTheme === "dark")
+        ? "#FFFFFF"
+        : skill.color;
+
     return (
         <SpotlightCard
             // THEME MATCHING:
@@ -48,13 +61,13 @@ function SkillCard({ skill }: { skill: any }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             whileHover={{
-                borderColor: skill.color,
-                boxShadow: `0 10px 30px -10px ${skill.color}50`
+                borderColor: effectiveColor,
+                boxShadow: `0 10px 30px -10px ${effectiveColor}50`
             }}
             style={{
                 // @ts-ignore
-                "--skill-color": skill.color,
-                "--spotlight-color": skill.color
+                "--skill-color": effectiveColor,
+                "--spotlight-color": effectiveColor
             }}
         >
             {/* Content Wrapper for Proper Centering & Z-Index */}
@@ -62,7 +75,7 @@ function SkillCard({ skill }: { skill: any }) {
                 {/* Icon - Standalone, Centered, Smaller */}
                 <skill.icon
                     className="w-6 h-6 md:w-8 md:h-8 shrink-0 transition-transform duration-300 group-hover:scale-110"
-                    style={{ color: skill.color }} // Always show brand color for "Little Colourful"
+                    style={{ color: effectiveColor }} // Always show brand color for "Little Colourful"
                 />
 
                 {/* Removing flex-1 to pack content in center */}
