@@ -9,6 +9,13 @@ import githubBadge from "@/assets/github-foundations.png";
 
 const certs = [
     {
+        title: "AWS Academy Graduate - Cloud Developing",
+        issuer: "AWS",
+        date: "Dec 2025",
+        link: "https://www.credly.com/badges/78630d46-5b21-4469-be5c-89ab60cd97b9/public_url",
+        image: "https://images.credly.com/size/680x680/images/bb3211c0-a562-44ec-a8b5-df54deb0e5e9/blob",
+    },
+    {
         title: "AWS Cloud Practitioner",
         issuer: "AWS",
         date: "Aug 2025",
@@ -40,7 +47,7 @@ export function Certification() {
                     <h2 className="text-4xl md:text-5xl font-bold font-heading">Certifications</h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {certs.map((cert, index) => (
                         <a
                             key={index}
