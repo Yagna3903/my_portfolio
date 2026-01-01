@@ -55,7 +55,7 @@ const experience = [
 
 export function Experience() {
     return (
-        <section id="experience" className="py-20 px-6 overflow-hidden relative">
+        <section id="experience" className="py-16 md:py-24 px-6 overflow-hidden relative">
             {/* Background glow for ambience */}
             <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[128px] pointer-events-none" />
             <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[128px] pointer-events-none" />

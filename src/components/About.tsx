@@ -6,7 +6,7 @@ import { SpotlightCard } from "@/components/SpotlightCard";
 
 export function About() {
     return (
-        <section id="about" className="py-20 px-6">
+        <section id="about" className="py-16 md:py-24 px-6">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                     <p className="text-xl text-primary font-medium tracking-wide mb-2">Get To Know More</p>

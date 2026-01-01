@@ -6,7 +6,7 @@ import { SpotlightCard } from "@/components/SpotlightCard";
 
 export function Contact() {
     return (
-        <section id="contact" className="py-20 px-6">
+        <section id="contact" className="py-16 md:py-24 px-6">
             <div className="max-w-4xl mx-auto text-center">
                 <div className="mb-12">
                     <p className="text-primary font-medium mb-2">Get in Touch</p>
