@@ -1,5 +1,5 @@
 "use client";
-
+// eslint-disable-next-line
 import { motion } from "framer-motion";
 import { SpotlightCard } from "@/components/SpotlightCard";
 import { useTheme } from "next-themes";
