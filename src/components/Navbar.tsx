@@ -21,7 +21,7 @@ export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
-    // Prevent hydration mismatchs
+    // Prevent hydration mismatch
     useEffect(() => {
         setMounted(true);
         const handleScroll = () => {
