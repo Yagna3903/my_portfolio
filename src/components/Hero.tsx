@@ -103,7 +103,7 @@ export function Hero() {
                     <div className="flex gap-4 pt-4 pointer-events-auto">
                         <MagneticButton>
                             <a
-                                href="/assets/Yagna_Patel_Resume.pdf"
+                                href={`${process.env.NODE_ENV === "production" ? "/my_portfolio" : ""}/assets/Yagna_Patel_Resume.pdf`}
                                 target="_blank"
                                 className="px-8 py-3 rounded-full bg-foreground text-background font-semibold flex items-center gap-2 shadow-lg hover:shadow-xl transition-all"
                             >
