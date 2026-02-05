@@ -81,7 +81,7 @@ function SkillCard({ skill }: { skill: any }) {
                 {/* Removing flex-1 to pack content in center */}
                 <div className="flex flex-col justify-center min-w-0">
                     {/* Name - Theme Font */}
-                    <h3 className="font-bold text-xs md:text-sm tracking-tight text-foreground group-hover:text-[var(--skill-color)] transition-colors duration-300 truncate">
+                    <h3 className="font-bold text-xs md:text-sm tracking-tight text-foreground group-hover:text-(--skill-color) transition-colors duration-300 truncate">
                         {skill.name}
                     </h3>
                 </div>
